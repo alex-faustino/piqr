@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package>
+  <name>picopter</name>
+  <version>0.1.0</version>
+  <description>Package for using a Raspberry Pi 3 as the flight computer for a quadcopter.</description>
+
+  <maintainer email="afausti2@illinois.edu">Alex Faustino</maintainer>
+
+  <license>GPLv3</license>
+
+  <author email="afausti2@illinois.edu">Alex Faustino</author>
+  <author email="mmbeasl2@illinois.edu">Marie Beasley</author>
+  <author email="tbretl@illinois.edu">Tim Bretl</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>apriltags</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>apriltags</run_depend>
+</package>

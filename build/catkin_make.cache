@@ -1,0 +1,2 @@
+apriltags:picopter:usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/pi/picopter/devel -DCMAKE_INSTALL_PREFIX=/home/pi/picopter/install -G Unix Makefiles

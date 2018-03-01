@@ -1,0 +1,8 @@
+prefix=/home/pi/picopter/devel
+
+Name: picopter
+Description: Description of picopter
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/pi/picopter/devel/lib 
+Requires: 
