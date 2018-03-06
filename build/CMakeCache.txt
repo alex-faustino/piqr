@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Builds the googlemock subproject
+BUILD_GMOCK:BOOL=ON
+
+//Builds the googletest subproject
+BUILD_GTEST:BOOL=OFF
+
 //Build shared libraries (DLLs).
 BUILD_SHARED_LIBS:BOOL=ON
 
@@ -198,6 +204,9 @@ EMPY_SCRIPT:STRING=/usr/bin/empy
 //The directory containing a CMake configuration file for Eigen3.
 Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 
+//The directory containing a CMake configuration file for GMock.
+GMock_DIR:PATH=GMock_DIR-NOTFOUND
+
 //Path to a file.
 GTEST_INCLUDE_DIR:PATH=/usr/include
 
@@ -223,7 +232,7 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
 
 //The directory containing a CMake configuration file for OpenCV.
-OpenCV_DIR:PATH=/opt/ros/kinetic/share/OpenCV-3.3.1
+OpenCV_DIR:PATH=/opt/ros/kinetic/share/OpenCV-3.3.1-dev
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
@@ -258,6 +267,18 @@ _CATKIN_GTEST_INCLUDE:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//Path to a file.
+_gmock_INCLUDES:FILEPATH=/usr/include/gmock/gmock.h
+
+//Path to a file.
+_gmock_SOURCES:FILEPATH=/usr/src/gmock/src/gmock.cc
+
+//Path to a file.
+_gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
+
+//Path to a file.
+_gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
+
 //Value Computed by CMake
 apriltags_BINARY_DIR:STATIC=/home/pi/picopter/build/apriltags
 
@@ -265,13 +286,16 @@ apriltags_BINARY_DIR:STATIC=/home/pi/picopter/build/apriltags
 apriltags_DIR:PATH=/home/pi/picopter/devel/share/apriltags/cmake
 
 //Dependencies for the target
-apriltags_LIB_DEPENDS:STATIC=general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
+apriltags_LIB_DEPENDS:STATIC=general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
 
 //Value Computed by CMake
 apriltags_SOURCE_DIR:STATIC=/home/pi/picopter/src/apriltags
 
+//The directory containing a CMake configuration file for camera_calibration_parsers.
+camera_calibration_parsers_DIR:PATH=/opt/ros/kinetic/share/camera_calibration_parsers/cmake
+
 //The directory containing a CMake configuration file for camera_info_manager.
-camera_info_manager_DIR:PATH=camera_info_manager_DIR-NOTFOUND
+camera_info_manager_DIR:PATH=/opt/ros/kinetic/share/camera_info_manager/cmake
 
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
@@ -285,17 +309,41 @@ cmake_modules_DIR:PATH=/opt/ros/kinetic/share/cmake_modules/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
+//The directory containing a CMake configuration file for cv_bridge.
+cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
+
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/kinetic/share/geometry_msgs/cmake
 
 //Value Computed by CMake
-gtest_BINARY_DIR:STATIC=/home/pi/picopter/build/gtest
+gmock_BINARY_DIR:STATIC=/home/pi/picopter/build/gtest/googlemock
+
+//Dependencies for the target
+gmock_LIB_DEPENDS:STATIC=general;-lpthread;
+
+//Value Computed by CMake
+gmock_SOURCE_DIR:STATIC=/usr/src/googletest/googlemock
+
+//Build all of Google Mock's own tests.
+gmock_build_tests:BOOL=OFF
+
+//Dependencies for the target
+gmock_main_LIB_DEPENDS:STATIC=general;-lpthread;
+
+//Value Computed by CMake
+googletest-distribution_BINARY_DIR:STATIC=/home/pi/picopter/build/gtest
+
+//Value Computed by CMake
+googletest-distribution_SOURCE_DIR:STATIC=/usr/src/googletest
+
+//Value Computed by CMake
+gtest_BINARY_DIR:STATIC=/home/pi/picopter/build/gtest/googlemock/gtest
 
 //Dependencies for the target
 gtest_LIB_DEPENDS:STATIC=general;-lpthread;
 
 //Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=/usr/src/gtest
+gtest_SOURCE_DIR:STATIC=/usr/src/googletest/googletest
 
 //Build gtest's sample programs.
 gtest_build_samples:BOOL=OFF
@@ -320,7 +368,7 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/librospack.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libcamera_calibration_parsers.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
@@ -332,7 +380,7 @@ message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 picopter_BINARY_DIR:STATIC=/home/pi/picopter/build/picopter
 
 //Dependencies for the target
-picopter_LIB_DEPENDS:STATIC=general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so;general;/usr/lib/arm-linux-gnueabihf/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/arm-linux-gnueabihf/liblog4cxx.so;general;/usr/lib/arm-linux-gnueabihf/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/arm-linux-gnueabihf/libboost_system.so;general;/usr/lib/arm-linux-gnueabihf/libboost_thread.so;general;/usr/lib/arm-linux-gnueabihf/libboost_chrono.so;general;/usr/lib/arm-linux-gnueabihf/libboost_date_time.so;general;/usr/lib/arm-linux-gnueabihf/libboost_atomic.so;general;/usr/lib/arm-linux-gnueabihf/libpthread.so;general;/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so;general;apriltags;general;/opt/ros/kinetic/lib/libopencv_calib3d3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_dnn3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_features2d3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_flann3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_highgui3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_ml3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_objdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_photo3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_shape3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_stitching3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_superres3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_video3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_videoio3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_aruco3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_ccalib3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_cvv3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_datasets3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_dpm3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_face3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_hdf3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_img_hash3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_line_descriptor3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_optflow3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_phase_unwrapping3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_plot3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_reg3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_rgbd3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_saliency3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_stereo3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_structured_light3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_surface_matching3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_text3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_tracking3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_xfeatures2d3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_ximgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_xobjdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_xphoto3.so.3.3.1;
+picopter_LIB_DEPENDS:STATIC=general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cvv;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/arm-linux-gnueabihf/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/arm-linux-gnueabihf/libpython2.7.so;general;/usr/lib/arm-linux-gnueabihf/libboost_program_options.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so;general;/usr/lib/arm-linux-gnueabihf/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/arm-linux-gnueabihf/liblog4cxx.so;general;/usr/lib/arm-linux-gnueabihf/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/arm-linux-gnueabihf/libboost_system.so;general;/usr/lib/arm-linux-gnueabihf/libboost_thread.so;general;/usr/lib/arm-linux-gnueabihf/libboost_chrono.so;general;/usr/lib/arm-linux-gnueabihf/libboost_date_time.so;general;/usr/lib/arm-linux-gnueabihf/libboost_atomic.so;general;/usr/lib/arm-linux-gnueabihf/libpthread.so;general;/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so;general;apriltags;general;/opt/ros/kinetic/lib/libopencv_calib3d3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_core3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_dnn3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_features2d3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_flann3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_highgui3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_imgcodecs3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_imgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_ml3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_objdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_photo3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_shape3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_stitching3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_superres3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_video3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_videoio3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_viz3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_aruco3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_ccalib3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_cvv3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_datasets3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_dpm3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_face3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_freetype3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_hdf3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_img_hash3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_line_descriptor3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_optflow3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_phase_unwrapping3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_plot3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_reg3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_rgbd3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_saliency3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_stereo3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_structured_light3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_surface_matching3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_text3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_tracking3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_xfeatures2d3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_ximgproc3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_xobjdetect3.so.3.3.1;general;/opt/ros/kinetic/lib/libopencv_xphoto3.so.3.3.1;
 
 //Value Computed by CMake
 picopter_SOURCE_DIR:STATIC=/home/pi/picopter/src/picopter
@@ -361,6 +409,9 @@ roslib_DIR:PATH=/opt/ros/kinetic/share/roslib/cmake
 //The directory containing a CMake configuration file for rospack.
 rospack_DIR:PATH=/opt/ros/kinetic/share/rospack/cmake
 
+//The directory containing a CMake configuration file for rospy.
+rospy_DIR:PATH=/opt/ros/kinetic/share/rospy/cmake
+
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
 
@@ -375,6 +426,9 @@ std_srvs_DIR:PATH=/opt/ros/kinetic/share/std_srvs/cmake
 
 //Value Computed by CMake
 usb_cam_BINARY_DIR:STATIC=/home/pi/picopter/build/usb_cam
+
+//Dependencies for the target
+usb_cam_LIB_DEPENDS:STATIC=general;avcodec;general;swscale;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml2.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/arm-linux-gnueabihf/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/librospack.so;general;/usr/lib/arm-linux-gnueabihf/libpython2.7.so;general;/usr/lib/arm-linux-gnueabihf/libboost_program_options.so;general;/usr/lib/arm-linux-gnueabihf/libtinyxml.so;general;/opt/ros/kinetic/lib/libcamera_info_manager.so;general;/opt/ros/kinetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so;general;/usr/lib/arm-linux-gnueabihf/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/arm-linux-gnueabihf/liblog4cxx.so;general;/usr/lib/arm-linux-gnueabihf/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/arm-linux-gnueabihf/libboost_system.so;general;/usr/lib/arm-linux-gnueabihf/libboost_thread.so;general;/usr/lib/arm-linux-gnueabihf/libboost_chrono.so;general;/usr/lib/arm-linux-gnueabihf/libboost_date_time.so;general;/usr/lib/arm-linux-gnueabihf/libboost_atomic.so;general;/usr/lib/arm-linux-gnueabihf/libpthread.so;general;/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so;
 
 //Value Computed by CMake
 usb_cam_SOURCE_DIR:STATIC=/home/pi/picopter/src/usb_cam
@@ -484,7 +538,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -535,6 +589,11 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29()]
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.13()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
+GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
+GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock
+GMOCK_FROM_SOURCE_LIBRARY_DIRS:INTERNAL=/home/pi/picopter/build/gmock
+GMOCK_FROM_SOURCE_MAIN_LIBRARIES:INTERNAL=gmock_main
 GTEST_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GTEST_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/include
 GTEST_FROM_SOURCE_LIBRARIES:INTERNAL=gtest
@@ -593,5 +652,75 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
 __pkg_config_checked_PC_EIGEN:INTERNAL=1
-prefix_result:INTERNAL=
+__pkg_config_checked_avcodec:INTERNAL=1
+__pkg_config_checked_swscale:INTERNAL=1
+avcodec_CFLAGS:INTERNAL=-I/usr/include/arm-linux-gnueabihf
+avcodec_CFLAGS_I:INTERNAL=
+avcodec_CFLAGS_OTHER:INTERNAL=
+avcodec_FOUND:INTERNAL=1
+avcodec_INCLUDEDIR:INTERNAL=/usr/include/arm-linux-gnueabihf
+avcodec_INCLUDE_DIRS:INTERNAL=/usr/include/arm-linux-gnueabihf
+avcodec_LDFLAGS:INTERNAL=-lavcodec
+avcodec_LDFLAGS_OTHER:INTERNAL=
+avcodec_LIBDIR:INTERNAL=/usr/lib/arm-linux-gnueabihf
+avcodec_LIBRARIES:INTERNAL=avcodec
+avcodec_LIBRARY_DIRS:INTERNAL=
+avcodec_LIBS:INTERNAL=
+avcodec_LIBS_L:INTERNAL=
+avcodec_LIBS_OTHER:INTERNAL=
+avcodec_LIBS_PATHS:INTERNAL=
+avcodec_PREFIX:INTERNAL=/usr
+avcodec_STATIC_CFLAGS:INTERNAL=-I/usr/include/arm-linux-gnueabihf
+avcodec_STATIC_CFLAGS_I:INTERNAL=
+avcodec_STATIC_CFLAGS_OTHER:INTERNAL=
+avcodec_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/arm-linux-gnueabihf
+avcodec_STATIC_LDFLAGS:INTERNAL=-L/opt/vc/lib/;-lavcodec;-ldl;-lXv;-lX11;-lXext;-ldl;-lvdpau;-lva;-lva-drm;-lva;-lva-x11;-lva;-lxcb;-lxcb-shm;-lxcb-xfixes;-lxcb-shape;-lX11;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lsndio;-ljack;-lasound;-lSDL2;-ldc1394;-lGL;-lopenal;-lmmal_core;-lmmal_util;-lmmal_vc_client;-lbcm_host;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebpmux;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-logg;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lrubberband;-lpulse;-lopus;-lopenmpt;-lopenjp2;-lopencv_core;-lopencv_imgproc;-lmp3lame;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-lebur128;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-lchromaprint;-ldl;-lm;-llzma;-lbz2;-lz;-pthread;-lswresample;-lm;-lsoxr;-lavutil;-lm
+avcodec_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
+avcodec_STATIC_LIBDIR:INTERNAL=
+avcodec_STATIC_LIBRARIES:INTERNAL=avcodec;dl;Xv;X11;Xext;dl;vdpau;va;va-drm;va;va-x11;va;xcb;xcb-shm;xcb-xfixes;xcb-shape;X11;cdio_paranoia;cdio_cdda;cdio;sndio;jack;asound;SDL2;dc1394;GL;openal;mmal_core;mmal_util;mmal_vc_client;bcm_host;zvbi;zmq;xvidcore;x265;x264;webpmux;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;ogg;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;rubberband;pulse;opus;openmpt;openjp2;opencv_core;opencv_imgproc;mp3lame;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;ebur128;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;chromaprint;dl;m;lzma;bz2;z;swresample;m;soxr;avutil;m
+avcodec_STATIC_LIBRARY_DIRS:INTERNAL=/opt/vc/lib/
+avcodec_STATIC_LIBS:INTERNAL=
+avcodec_STATIC_LIBS_L:INTERNAL=
+avcodec_STATIC_LIBS_OTHER:INTERNAL=
+avcodec_STATIC_LIBS_PATHS:INTERNAL=
+avcodec_VERSION:INTERNAL=57.64.101
+avcodec_libavcodec_INCLUDEDIR:INTERNAL=
+avcodec_libavcodec_LIBDIR:INTERNAL=
+avcodec_libavcodec_PREFIX:INTERNAL=
+avcodec_libavcodec_VERSION:INTERNAL=
+prefix_result:INTERNAL=/usr/lib/arm-linux-gnueabihf
+swscale_CFLAGS:INTERNAL=-I/usr/include/arm-linux-gnueabihf
+swscale_CFLAGS_I:INTERNAL=
+swscale_CFLAGS_OTHER:INTERNAL=
+swscale_FOUND:INTERNAL=1
+swscale_INCLUDEDIR:INTERNAL=/usr/include/arm-linux-gnueabihf
+swscale_INCLUDE_DIRS:INTERNAL=/usr/include/arm-linux-gnueabihf
+swscale_LDFLAGS:INTERNAL=-lswscale
+swscale_LDFLAGS_OTHER:INTERNAL=
+swscale_LIBDIR:INTERNAL=/usr/lib/arm-linux-gnueabihf
+swscale_LIBRARIES:INTERNAL=swscale
+swscale_LIBRARY_DIRS:INTERNAL=
+swscale_LIBS:INTERNAL=
+swscale_LIBS_L:INTERNAL=
+swscale_LIBS_OTHER:INTERNAL=
+swscale_LIBS_PATHS:INTERNAL=
+swscale_PREFIX:INTERNAL=/usr
+swscale_STATIC_CFLAGS:INTERNAL=-I/usr/include/arm-linux-gnueabihf
+swscale_STATIC_CFLAGS_I:INTERNAL=
+swscale_STATIC_CFLAGS_OTHER:INTERNAL=
+swscale_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/arm-linux-gnueabihf
+swscale_STATIC_LDFLAGS:INTERNAL=-lswscale;-lm;-lavutil;-lm
+swscale_STATIC_LDFLAGS_OTHER:INTERNAL=
+swscale_STATIC_LIBDIR:INTERNAL=
+swscale_STATIC_LIBRARIES:INTERNAL=swscale;m;avutil;m
+swscale_STATIC_LIBRARY_DIRS:INTERNAL=
+swscale_STATIC_LIBS:INTERNAL=
+swscale_STATIC_LIBS_L:INTERNAL=
+swscale_STATIC_LIBS_OTHER:INTERNAL=
+swscale_STATIC_LIBS_PATHS:INTERNAL=
+swscale_VERSION:INTERNAL=4.2.100
+swscale_libswscale_INCLUDEDIR:INTERNAL=
+swscale_libswscale_LIBDIR:INTERNAL=
+swscale_libswscale_PREFIX:INTERNAL=
+swscale_libswscale_VERSION:INTERNAL=
 

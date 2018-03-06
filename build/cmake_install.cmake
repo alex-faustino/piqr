@@ -119,6 +119,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/pi/picopter/build/gtest/cmake_install.cmake")
   include("/home/pi/picopter/build/apriltags/cmake_install.cmake")
   include("/home/pi/picopter/build/picopter/cmake_install.cmake")
+  include("/home/pi/picopter/build/usb_cam/cmake_install.cmake")
 
 endif()
 

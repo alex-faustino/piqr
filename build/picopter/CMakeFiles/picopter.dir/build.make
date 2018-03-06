@@ -57,39 +57,51 @@ include picopter/CMakeFiles/picopter.dir/progress.make
 # Include the compile flags for this target's objects.
 include picopter/CMakeFiles/picopter.dir/flags.make
 
-picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o: picopter/CMakeFiles/picopter.dir/flags.make
-picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o: /home/pi/picopter/src/picopter/src/quadposepub.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o"
-	cd /home/pi/picopter/build/picopter && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picopter.dir/src/quadposepub.cpp.o -c /home/pi/picopter/src/picopter/src/quadposepub.cpp
+picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o: picopter/CMakeFiles/picopter.dir/flags.make
+picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o: /home/pi/picopter/src/picopter/src/tag_detector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o"
+	cd /home/pi/picopter/build/picopter && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picopter.dir/src/tag_detector.cpp.o -c /home/pi/picopter/src/picopter/src/tag_detector.cpp
 
-picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/picopter.dir/src/quadposepub.cpp.i"
-	cd /home/pi/picopter/build/picopter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/picopter/src/picopter/src/quadposepub.cpp > CMakeFiles/picopter.dir/src/quadposepub.cpp.i
+picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/picopter.dir/src/tag_detector.cpp.i"
+	cd /home/pi/picopter/build/picopter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/picopter/src/picopter/src/tag_detector.cpp > CMakeFiles/picopter.dir/src/tag_detector.cpp.i
 
-picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/picopter.dir/src/quadposepub.cpp.s"
-	cd /home/pi/picopter/build/picopter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/picopter/src/picopter/src/quadposepub.cpp -o CMakeFiles/picopter.dir/src/quadposepub.cpp.s
+picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/picopter.dir/src/tag_detector.cpp.s"
+	cd /home/pi/picopter/build/picopter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/picopter/src/picopter/src/tag_detector.cpp -o CMakeFiles/picopter.dir/src/tag_detector.cpp.s
 
-picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o.requires:
+picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o.requires:
 
-.PHONY : picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o.requires
+.PHONY : picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o.requires
 
-picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o.provides: picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o.requires
-	$(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o.provides.build
-.PHONY : picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o.provides
+picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o.provides: picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o.requires
+	$(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o.provides.build
+.PHONY : picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o.provides
 
-picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o.provides.build: picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o
+picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o.provides.build: picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o
 
 
 # Object files for target picopter
 picopter_OBJECTS = \
-"CMakeFiles/picopter.dir/src/quadposepub.cpp.o"
+"CMakeFiles/picopter.dir/src/tag_detector.cpp.o"
 
 # External object files for target picopter
 picopter_EXTERNAL_OBJECTS =
 
-/home/pi/picopter/devel/lib/libpicopter.so: picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o
+/home/pi/picopter/devel/lib/libpicopter.so: picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o
 /home/pi/picopter/devel/lib/libpicopter.so: picopter/CMakeFiles/picopter.dir/build.make
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libcv_bridge.so
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libimage_transport.so
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libtinyxml2.so
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libclass_loader.so
+/home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/libPocoFoundation.so
+/home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libdl.so
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libroslib.so
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/librospack.so
+/home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libpython2.7.so
+/home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libboost_program_options.so
+/home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libtinyxml.so
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libroscpp.so
 /home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libboost_filesystem.so
 /home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libboost_signals.so
@@ -99,8 +111,8 @@ picopter_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/liblog4cxx.so
 /home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libboost_regex.so
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/librostime.so
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/librostime.so
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libcpp_common.so
 /home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libboost_system.so
 /home/pi/picopter/devel/lib/libpicopter.so: /usr/lib/arm-linux-gnueabihf/libboost_thread.so
@@ -127,6 +139,7 @@ picopter_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_video3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_videoio3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_viz3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_aruco3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.3.1
@@ -135,6 +148,7 @@ picopter_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_datasets3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_dpm3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_face3.so.3.3.1
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_freetype3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_hdf3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_img_hash3.so.3.3.1
@@ -157,7 +171,6 @@ picopter_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_stitching3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_superres3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1
-/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_photo3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_aruco3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.3.1
@@ -165,6 +178,8 @@ picopter_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_cvv3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_dpm3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_face3.so.3.3.1
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_photo3.so.3.3.1
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_freetype3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_hdf3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_img_hash3.so.3.3.1
@@ -175,6 +190,7 @@ picopter_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_saliency3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_stereo3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_structured_light3.so.3.3.1
+/home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_viz3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_phase_unwrapping3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_surface_matching3.so.3.3.1
 /home/pi/picopter/devel/lib/libpicopter.so: /opt/ros/kinetic/lib/libopencv_tracking3.so.3.3.1
@@ -207,7 +223,7 @@ picopter/CMakeFiles/picopter.dir/build: /home/pi/picopter/devel/lib/libpicopter.
 
 .PHONY : picopter/CMakeFiles/picopter.dir/build
 
-picopter/CMakeFiles/picopter.dir/requires: picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o.requires
+picopter/CMakeFiles/picopter.dir/requires: picopter/CMakeFiles/picopter.dir/src/tag_detector.cpp.o.requires
 
 .PHONY : picopter/CMakeFiles/picopter.dir/requires
 

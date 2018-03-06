@@ -115,7 +115,7 @@ void TagDetection::getRelativeTranslationRotation(double tag_size, double fx, do
                                                   Eigen::Vector3d& trans, Eigen::Matrix3d& rot) const {
   Eigen::Matrix4d T =
     getRelativeTransform(tag_size, fx, fy, px, py);
-
+  /*	
   // converting from camera frame (z forward, x right, y down) to
   // object frame (x forward, y left, z up)
   Eigen::Matrix4d M;
@@ -131,6 +131,12 @@ void TagDetection::getRelativeTranslationRotation(double tag_size, double fx, do
   // convention makes more sense here, because yaw,pitch,roll then
   // naturally agree with the orientation of the object
   rot = T.block(0,0,3,3);
+  */
+  
+  // Change by Alex Faustino
+  // Keep transform in camera frame
+  trans = T.col(3).head(3);
+  rot = T.block(0, 0, 3, 3);
 }
 
 // draw one April tag detection on actual image

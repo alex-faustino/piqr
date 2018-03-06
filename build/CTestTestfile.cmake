@@ -7,3 +7,4 @@
 subdirs("gtest")
 subdirs("apriltags")
 subdirs("picopter")
+subdirs("usb_cam")

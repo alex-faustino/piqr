@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/picopter.dir/src/quadposepub.cpp.o"
+  "CMakeFiles/picopter.dir/src/tag_detector.cpp.o"
   "/home/pi/picopter/devel/lib/libpicopter.pdb"
   "/home/pi/picopter/devel/lib/libpicopter.so"
 )

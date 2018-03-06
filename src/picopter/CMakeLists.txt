@@ -4,15 +4,20 @@ project(picopter)
 set(CMAKE_CXX_FLAGS "-std=c++11 -Ofast")
 
 find_package(catkin REQUIRED COMPONENTS
+  cv_bridge
+  image_transport
+  sensor_msgs
+  std_msgs
   roscpp
+  rospy
   apriltags
 )
 
-find_package(cmake_modules)
-find_package(Eigen)
-find_package(OpenCV)
+find_package(OpenCV REQUIRED)
 
-catkin_package()
+catkin_package(
+  INCLUDE_DIRS include
+)
 
 include_directories(
   include
@@ -21,14 +26,14 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_library(${PROJECT_NAME}
-  src/quadposepub.cpp)
+set(${PROJECT_NAME}_SOURCES
+  src/tag_detector.cpp
+  src/nodes/tag_detector_node.cpp
+)
+add_executable(tag_detector ${${PROJECT_NAME}_SOURCES})
 
-target_link_libraries(${PROJECT_NAME}
+target_link_libraries(tag_detector
   ${Eigen_LIBRARIES}
   ${OpenCV_LIBRARIES}
   ${catkin_LIBRARIES}
 )
-
-add_executable(quadpose src/quadposepub.cpp)
-target_link_libraries(quadpose ${PROJECT_NAME})

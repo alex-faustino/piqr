@@ -91,6 +91,18 @@ quadpose_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/picopter/quadpose: picopter/CMakeFiles/quadpose.dir/src/quadposepub.cpp.o
 /home/pi/picopter/devel/lib/picopter/quadpose: picopter/CMakeFiles/quadpose.dir/build.make
 /home/pi/picopter/devel/lib/picopter/quadpose: /home/pi/picopter/devel/lib/libpicopter.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libcv_bridge.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libimage_transport.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libtinyxml2.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libclass_loader.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/libPocoFoundation.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libdl.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libroslib.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/librospack.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libpython2.7.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libboost_program_options.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libtinyxml.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libroscpp.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libboost_filesystem.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libboost_signals.so
@@ -100,8 +112,8 @@ quadpose_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/liblog4cxx.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libboost_regex.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/librostime.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/librostime.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libcpp_common.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libboost_system.so
 /home/pi/picopter/devel/lib/picopter/quadpose: /usr/lib/arm-linux-gnueabihf/libboost_thread.so
@@ -114,7 +126,6 @@ quadpose_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_stitching3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_superres3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1
-/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_photo3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_aruco3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.3.1
@@ -122,6 +133,8 @@ quadpose_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_cvv3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_dpm3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_face3.so.3.3.1
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_photo3.so.3.3.1
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_freetype3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_hdf3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_img_hash3.so.3.3.1
@@ -132,6 +145,7 @@ quadpose_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_saliency3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_stereo3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_structured_light3.so.3.3.1
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_viz3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_phase_unwrapping3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_surface_matching3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_tracking3.so.3.3.1
@@ -172,6 +186,7 @@ quadpose_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_video3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_videoio3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_viz3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_aruco3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.3.1
@@ -180,6 +195,7 @@ quadpose_EXTERNAL_OBJECTS =
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_datasets3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_dpm3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_face3.so.3.3.1
+/home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_freetype3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_hdf3.so.3.3.1
 /home/pi/picopter/devel/lib/picopter/quadpose: /opt/ros/kinetic/lib/libopencv_img_hash3.so.3.3.1

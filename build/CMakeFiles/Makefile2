@@ -223,82 +223,184 @@ clean: CMakeFiles/download_extra_data.dir/clean
 # Directory level rules for directory gtest
 
 # Convenience name for "all" pass in the directory.
-gtest/all:
+gtest/all: gtest/googlemock/all
 
 .PHONY : gtest/all
 
 # Convenience name for "clean" pass in the directory.
-gtest/clean: gtest/CMakeFiles/gtest.dir/clean
-gtest/clean: gtest/CMakeFiles/gtest_main.dir/clean
+gtest/clean: gtest/googlemock/clean
 
 .PHONY : gtest/clean
 
 # Convenience name for "preinstall" pass in the directory.
-gtest/preinstall:
+gtest/preinstall: gtest/googlemock/preinstall
 
 .PHONY : gtest/preinstall
 
 #=============================================================================
-# Target rules for target gtest/CMakeFiles/gtest.dir
+# Directory level rules for directory gtest/googlemock
+
+# Convenience name for "all" pass in the directory.
+gtest/googlemock/all: gtest/googlemock/gtest/all
+
+.PHONY : gtest/googlemock/all
+
+# Convenience name for "clean" pass in the directory.
+gtest/googlemock/clean: gtest/googlemock/CMakeFiles/gmock.dir/clean
+gtest/googlemock/clean: gtest/googlemock/CMakeFiles/gmock_main.dir/clean
+gtest/googlemock/clean: gtest/googlemock/gtest/clean
+
+.PHONY : gtest/googlemock/clean
+
+# Convenience name for "preinstall" pass in the directory.
+gtest/googlemock/preinstall: gtest/googlemock/gtest/preinstall
+
+.PHONY : gtest/googlemock/preinstall
+
+#=============================================================================
+# Target rules for target gtest/googlemock/CMakeFiles/gmock.dir
 
 # All Build rule for target.
-gtest/CMakeFiles/gtest.dir/all:
-	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
-	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=16,17 "Built target gtest"
-.PHONY : gtest/CMakeFiles/gtest.dir/all
+gtest/googlemock/CMakeFiles/gmock.dir/all:
+	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
+	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=16,17,18 "Built target gmock"
+.PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
-gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest.dir/all
+gtest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/CMakeFiles/gmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : gtest/CMakeFiles/gtest.dir/rule
+.PHONY : gtest/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
-gtest: gtest/CMakeFiles/gtest.dir/rule
+gmock: gtest/googlemock/CMakeFiles/gmock.dir/rule
 
-.PHONY : gtest
-
-# clean rule for target.
-gtest/CMakeFiles/gtest.dir/clean:
-	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/clean
-.PHONY : gtest/CMakeFiles/gtest.dir/clean
+.PHONY : gmock
 
 # clean rule for target.
-clean: gtest/CMakeFiles/gtest.dir/clean
+gtest/googlemock/CMakeFiles/gmock.dir/clean:
+	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/clean
+.PHONY : gtest/googlemock/CMakeFiles/gmock.dir/clean
+
+# clean rule for target.
+clean: gtest/googlemock/CMakeFiles/gmock.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target gtest/CMakeFiles/gtest_main.dir
+# Target rules for target gtest/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
-	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=18,19 "Built target gtest_main"
-.PHONY : gtest/CMakeFiles/gtest_main.dir/all
+gtest/googlemock/CMakeFiles/gmock_main.dir/all:
+	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
+	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=19,20,21,22 "Built target gmock_main"
+.PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
-gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+gtest/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/CMakeFiles/gmock_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : gtest/CMakeFiles/gtest_main.dir/rule
+.PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
-gtest_main: gtest/CMakeFiles/gtest_main.dir/rule
+gmock_main: gtest/googlemock/CMakeFiles/gmock_main.dir/rule
+
+.PHONY : gmock_main
+
+# clean rule for target.
+gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
+	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/clean
+.PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/clean
+
+# clean rule for target.
+clean: gtest/googlemock/CMakeFiles/gmock_main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory gtest/googlemock/gtest
+
+# Convenience name for "all" pass in the directory.
+gtest/googlemock/gtest/all:
+
+.PHONY : gtest/googlemock/gtest/all
+
+# Convenience name for "clean" pass in the directory.
+gtest/googlemock/gtest/clean: gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
+gtest/googlemock/gtest/clean: gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
+
+.PHONY : gtest/googlemock/gtest/clean
+
+# Convenience name for "preinstall" pass in the directory.
+gtest/googlemock/gtest/preinstall:
+
+.PHONY : gtest/googlemock/gtest/preinstall
+
+#=============================================================================
+# Target rules for target gtest/googlemock/gtest/CMakeFiles/gtest.dir
+
+# All Build rule for target.
+gtest/googlemock/gtest/CMakeFiles/gtest.dir/all:
+	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/depend
+	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=23,24 "Built target gtest"
+.PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
+
+# Build rule for subdir invocation for target.
+gtest/googlemock/gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/rule
+
+# Convenience name for target.
+gtest: gtest/googlemock/gtest/CMakeFiles/gtest.dir/rule
+
+.PHONY : gtest
+
+# clean rule for target.
+gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
+.PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
+
+# clean rule for target.
+clean: gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target gtest/googlemock/gtest/CMakeFiles/gtest_main.dir
+
+# All Build rule for target.
+gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
+	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=25,26 "Built target gtest_main"
+.PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
+
+# Build rule for subdir invocation for target.
+gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule
+
+# Convenience name for target.
+gtest_main: gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/rule
 
 .PHONY : gtest_main
 
 # clean rule for target.
-gtest/CMakeFiles/gtest_main.dir/clean:
-	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/clean
-.PHONY : gtest/CMakeFiles/gtest_main.dir/clean
+gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean:
+	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
+.PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 
 # clean rule for target.
-clean: gtest/CMakeFiles/gtest_main.dir/clean
+clean: gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 
 .PHONY : clean
 
@@ -394,29 +496,37 @@ clean: apriltags/CMakeFiles/apriltags.dir/clean
 # Directory level rules for directory picopter
 
 # Convenience name for "all" pass in the directory.
-picopter/all: picopter/CMakeFiles/picopter.dir/all
-picopter/all: picopter/CMakeFiles/quadpose.dir/all
+picopter/all: picopter/CMakeFiles/tag_detector.dir/all
 
 .PHONY : picopter/all
 
 # Convenience name for "clean" pass in the directory.
-picopter/clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-picopter/clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 picopter/clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean
 picopter/clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-picopter/clean: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+picopter/clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+picopter/clean: picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+picopter/clean: picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+picopter/clean: picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+picopter/clean: picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+picopter/clean: picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+picopter/clean: picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+picopter/clean: picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 picopter/clean: picopter/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-picopter/clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-picopter/clean: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+picopter/clean: picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+picopter/clean: picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+picopter/clean: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 picopter/clean: picopter/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+picopter/clean: picopter/CMakeFiles/tag_detector.dir/clean
 picopter/clean: picopter/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-picopter/clean: picopter/CMakeFiles/picopter.dir/clean
-picopter/clean: picopter/CMakeFiles/quadpose.dir/clean
+picopter/clean: picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+picopter/clean: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean
+picopter/clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+picopter/clean: picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+picopter/clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 
 .PHONY : picopter/clean
 
@@ -424,70 +534,6 @@ picopter/clean: picopter/CMakeFiles/quadpose.dir/clean
 picopter/preinstall:
 
 .PHONY : picopter/preinstall
-
-#=============================================================================
-# Target rules for target picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# clean rule for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# clean rule for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Target rules for target picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
@@ -518,38 +564,6 @@ picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_py.dir
-
-# All Build rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_py.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_py.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_py.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_py.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# clean rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_py.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 .PHONY : clean
 
@@ -586,98 +600,258 @@ clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir
+# Target rules for target picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
-.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_cpp: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+rosgraph_msgs_generate_messages_lisp: picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : std_msgs_generate_messages_cpp
-
-# clean rule for target.
-picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+.PHONY : rosgraph_msgs_generate_messages_lisp
 
 # clean rule for target.
-clean: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_cpp.dir
+# Target rules for target picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_py"
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
+picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+geometry_msgs_generate_messages_py: picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
-.PHONY : roscpp_generate_messages_cpp
-
-# clean rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+.PHONY : geometry_msgs_generate_messages_py
 
 # clean rule for target.
-clean: picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_eus.dir
+# Target rules for target picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_eus.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_eus.dir/all
+picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_nodejs"
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
+picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+geometry_msgs_generate_messages_nodejs: picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
-
-# clean rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+.PHONY : geometry_msgs_generate_messages_nodejs
 
 # clean rule for target.
-clean: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# clean rule for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# clean rule for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_eus"
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# clean rule for target.
+picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# clean rule for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_lisp"
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# clean rule for target.
+picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 
 .PHONY : clean
 
@@ -714,130 +888,130 @@ clean: picopter/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
+# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_eus.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+picopter/CMakeFiles/roscpp_generate_messages_eus.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+roscpp_generate_messages_eus: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# clean rule for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+.PHONY : roscpp_generate_messages_eus
 
 # clean rule for target.
-clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_lisp.dir
+# Target rules for target picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
+picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+sensor_msgs_generate_messages_lisp: picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : roscpp_generate_messages_lisp
-
-# clean rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+.PHONY : sensor_msgs_generate_messages_lisp
 
 # clean rule for target.
-clean: picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir
+# Target rules for target picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
+picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+sensor_msgs_generate_messages_nodejs: picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
-
-# clean rule for target.
-picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+.PHONY : sensor_msgs_generate_messages_nodejs
 
 # clean rule for target.
-clean: picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/std_msgs_generate_messages_eus.dir
+# Target rules for target picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
-.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
+.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+std_msgs_generate_messages_cpp: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
-
-# clean rule for target.
-picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+.PHONY : std_msgs_generate_messages_cpp
 
 # clean rule for target.
-clean: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 .PHONY : clean
 
@@ -874,6 +1048,43 @@ clean: picopter/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target picopter/CMakeFiles/tag_detector.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/tag_detector.dir/all: apriltags/CMakeFiles/apriltags.dir/all
+	$(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=27,28,29 "Built target tag_detector"
+.PHONY : picopter/CMakeFiles/tag_detector.dir/all
+
+# Include target in all.
+all: picopter/CMakeFiles/tag_detector.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/tag_detector.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 18
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/tag_detector.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/tag_detector.dir/rule
+
+# Convenience name for target.
+tag_detector: picopter/CMakeFiles/tag_detector.dir/rule
+
+.PHONY : tag_detector
+
+# clean rule for target.
+picopter/CMakeFiles/tag_detector.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/clean
+.PHONY : picopter/CMakeFiles/tag_detector.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/tag_detector.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target picopter/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
@@ -906,77 +1117,517 @@ clean: picopter/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/picopter.dir
+# Target rules for target picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/picopter.dir/all: apriltags/CMakeFiles/apriltags.dir/all
-	$(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=20,21 "Built target picopter"
-.PHONY : picopter/CMakeFiles/picopter.dir/all
-
-# Include target in all.
-all: picopter/CMakeFiles/picopter.dir/all
-
-.PHONY : all
+picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target geometry_msgs_generate_messages_cpp"
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/picopter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 17
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter.dir/all
+picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/picopter.dir/rule
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-picopter: picopter/CMakeFiles/picopter.dir/rule
+geometry_msgs_generate_messages_cpp: picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : picopter
-
-# clean rule for target.
-picopter/CMakeFiles/picopter.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/clean
-.PHONY : picopter/CMakeFiles/picopter.dir/clean
+.PHONY : geometry_msgs_generate_messages_cpp
 
 # clean rule for target.
-clean: picopter/CMakeFiles/picopter.dir/clean
+picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target picopter/CMakeFiles/quadpose.dir
+# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_cpp.dir
 
 # All Build rule for target.
-picopter/CMakeFiles/quadpose.dir/all: apriltags/CMakeFiles/apriltags.dir/all
-picopter/CMakeFiles/quadpose.dir/all: picopter/CMakeFiles/picopter.dir/all
-	$(MAKE) -f picopter/CMakeFiles/quadpose.dir/build.make picopter/CMakeFiles/quadpose.dir/depend
-	$(MAKE) -f picopter/CMakeFiles/quadpose.dir/build.make picopter/CMakeFiles/quadpose.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=22,23 "Built target quadpose"
-.PHONY : picopter/CMakeFiles/quadpose.dir/all
+picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# clean rule for target.
+picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/std_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
+.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_eus: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+.PHONY : std_msgs_generate_messages_eus
+
+# clean rule for target.
+picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# clean rule for target.
+picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_py.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/roscpp_generate_messages_py.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_py.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_py.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_py.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# clean rule for target.
+picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_py.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/roscpp_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# clean rule for target.
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/roscpp_generate_messages_lisp.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_lisp: picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+.PHONY : roscpp_generate_messages_lisp
+
+# clean rule for target.
+picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# clean rule for target.
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory usb_cam
+
+# Convenience name for "all" pass in the directory.
+usb_cam/all: usb_cam/CMakeFiles/usb_cam_node.dir/all
+usb_cam/all: usb_cam/CMakeFiles/usb_cam.dir/all
+
+.PHONY : usb_cam/all
+
+# Convenience name for "clean" pass in the directory.
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
+usb_cam/clean: usb_cam/CMakeFiles/usb_cam.dir/clean
+
+.PHONY : usb_cam/clean
+
+# Convenience name for "preinstall" pass in the directory.
+usb_cam/preinstall:
+
+.PHONY : usb_cam/preinstall
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_nodejs"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_nodejs: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_srvs_generate_messages_nodejs
+
+# clean rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/all:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_eus"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_eus: usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+.PHONY : std_srvs_generate_messages_eus
+
+# clean rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/all:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_py"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_py: usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+.PHONY : std_srvs_generate_messages_py
+
+# clean rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/std_srvs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/all:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_cpp"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_cpp: usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+.PHONY : std_srvs_generate_messages_cpp
+
+# clean rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/std_srvs_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/all:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target std_srvs_generate_messages_lisp"
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_lisp: usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+.PHONY : std_srvs_generate_messages_lisp
+
+# clean rule for target.
+usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+.PHONY : usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/usb_cam_node.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=32,33 "Built target usb_cam_node"
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/all
 
 # Include target in all.
-all: picopter/CMakeFiles/quadpose.dir/all
+all: usb_cam/CMakeFiles/usb_cam_node.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-picopter/CMakeFiles/quadpose.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 19
-	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/quadpose.dir/all
+usb_cam/CMakeFiles/usb_cam_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/usb_cam_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
-.PHONY : picopter/CMakeFiles/quadpose.dir/rule
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/rule
 
 # Convenience name for target.
-quadpose: picopter/CMakeFiles/quadpose.dir/rule
+usb_cam_node: usb_cam/CMakeFiles/usb_cam_node.dir/rule
 
-.PHONY : quadpose
-
-# clean rule for target.
-picopter/CMakeFiles/quadpose.dir/clean:
-	$(MAKE) -f picopter/CMakeFiles/quadpose.dir/build.make picopter/CMakeFiles/quadpose.dir/clean
-.PHONY : picopter/CMakeFiles/quadpose.dir/clean
+.PHONY : usb_cam_node
 
 # clean rule for target.
-clean: picopter/CMakeFiles/quadpose.dir/clean
+usb_cam/CMakeFiles/usb_cam_node.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/clean
+.PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target usb_cam/CMakeFiles/usb_cam.dir
+
+# All Build rule for target.
+usb_cam/CMakeFiles/usb_cam.dir/all:
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/depend
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=30,31 "Built target usb_cam"
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/all
+
+# Include target in all.
+all: usb_cam/CMakeFiles/usb_cam.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+usb_cam/CMakeFiles/usb_cam.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 usb_cam/CMakeFiles/usb_cam.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/rule
+
+# Convenience name for target.
+usb_cam: usb_cam/CMakeFiles/usb_cam.dir/rule
+
+.PHONY : usb_cam
+
+# clean rule for target.
+usb_cam/CMakeFiles/usb_cam.dir/clean:
+	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/clean
+.PHONY : usb_cam/CMakeFiles/usb_cam.dir/clean
+
+# clean rule for target.
+clean: usb_cam/CMakeFiles/usb_cam.dir/clean
 
 .PHONY : clean
 

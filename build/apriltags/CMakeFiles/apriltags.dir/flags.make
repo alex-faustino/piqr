@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++11 -Ofast -fPIC
 
 CXX_DEFINES = -DROS_BUILD_SHARED_LIBS=1 -Dapriltags_EXPORTS
 
-CXX_INCLUDES = -I/home/pi/picopter/src/apriltags/include -I/home/pi/picopter/src/apriltags/include/AprilTags -I/usr/include/eigen3 -isystem /opt/ros/kinetic/include/opencv-3.3.1 -isystem /opt/ros/kinetic/include/opencv-3.3.1/opencv 
+CXX_INCLUDES = -I/home/pi/picopter/src/apriltags/include -I/home/pi/picopter/src/apriltags/include/AprilTags -I/usr/include/eigen3 -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv 
 

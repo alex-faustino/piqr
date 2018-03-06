@@ -3,6 +3,6 @@ prefix=/home/pi/picopter/install
 Name: picopter
 Description: Description of picopter
 Version: 0.1.0
-Cflags: 
+Cflags: -I/home/pi/picopter/install/include
 Libs: -L/home/pi/picopter/install/lib 
 Requires: 

@@ -67,49 +67,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -122,6 +79,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -132,6 +100,38 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,36 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
 	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
@@ -209,21 +179,6 @@ rosgraph_msgs_generate_messages_py: picopter/CMakeFiles/rosgraph_msgs_generate_m
 rosgraph_msgs_generate_messages_py/fast:
 	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_py.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 picopter/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
@@ -241,49 +196,124 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_cpp: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+rosgraph_msgs_generate_messages_lisp: picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : std_msgs_generate_messages_cpp
+.PHONY : rosgraph_msgs_generate_messages_lisp
 
 # fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+geometry_msgs_generate_messages_py: picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
-.PHONY : roscpp_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_py
 
 # fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
+geometry_msgs_generate_messages_py/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+geometry_msgs_generate_messages_nodejs: picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 picopter/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
@@ -301,64 +331,64 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+roscpp_generate_messages_eus: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : roscpp_generate_messages_eus
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
+roscpp_generate_messages_eus/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+sensor_msgs_generate_messages_lisp: picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : roscpp_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_lisp
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+sensor_msgs_generate_messages_nodejs: picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+std_msgs_generate_messages_cpp: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
+.PHONY : std_msgs_generate_messages_cpp
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
+std_msgs_generate_messages_cpp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 picopter/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
@@ -376,6 +406,21 @@ std_msgs_generate_messages_lisp/fast:
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+picopter/CMakeFiles/tag_detector.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/tag_detector.dir/rule
+.PHONY : picopter/CMakeFiles/tag_detector.dir/rule
+
+# Convenience name for target.
+tag_detector: picopter/CMakeFiles/tag_detector.dir/rule
+
+.PHONY : tag_detector
+
+# fast build rule for target.
+tag_detector/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/build
+.PHONY : tag_detector/fast
+
+# Convenience name for target.
 picopter/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : picopter/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
@@ -391,64 +436,178 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/picopter.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter.dir/rule
-.PHONY : picopter/CMakeFiles/picopter.dir/rule
+picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-picopter: picopter/CMakeFiles/picopter.dir/rule
+geometry_msgs_generate_messages_cpp: picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : picopter
+.PHONY : geometry_msgs_generate_messages_cpp
 
 # fast build rule for target.
-picopter/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/build
-.PHONY : picopter/fast
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-picopter/CMakeFiles/quadpose.dir/rule:
-	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/quadpose.dir/rule
-.PHONY : picopter/CMakeFiles/quadpose.dir/rule
+picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-quadpose: picopter/CMakeFiles/quadpose.dir/rule
+roscpp_generate_messages_cpp: picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
-.PHONY : quadpose
+.PHONY : roscpp_generate_messages_cpp
 
 # fast build rule for target.
-quadpose/fast:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/quadpose.dir/build.make picopter/CMakeFiles/quadpose.dir/build
-.PHONY : quadpose/fast
+roscpp_generate_messages_cpp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
 
-src/quadposepub.o: src/quadposepub.cpp.o
+# Convenience name for target.
+picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
-.PHONY : src/quadposepub.o
+# Convenience name for target.
+std_msgs_generate_messages_eus: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+.PHONY : std_msgs_generate_messages_eus
+
+# fast build rule for target.
+std_msgs_generate_messages_eus/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: picopter/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_py.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_lisp: picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make picopter/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+src/nodes/tag_detector_node.o: src/nodes/tag_detector_node.cpp.o
+
+.PHONY : src/nodes/tag_detector_node.o
 
 # target to build an object file
-src/quadposepub.cpp.o:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.o
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/quadpose.dir/build.make picopter/CMakeFiles/quadpose.dir/src/quadposepub.cpp.o
-.PHONY : src/quadposepub.cpp.o
+src/nodes/tag_detector_node.cpp.o:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/src/nodes/tag_detector_node.cpp.o
+.PHONY : src/nodes/tag_detector_node.cpp.o
 
-src/quadposepub.i: src/quadposepub.cpp.i
+src/nodes/tag_detector_node.i: src/nodes/tag_detector_node.cpp.i
 
-.PHONY : src/quadposepub.i
+.PHONY : src/nodes/tag_detector_node.i
 
 # target to preprocess a source file
-src/quadposepub.cpp.i:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.i
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/quadpose.dir/build.make picopter/CMakeFiles/quadpose.dir/src/quadposepub.cpp.i
-.PHONY : src/quadposepub.cpp.i
+src/nodes/tag_detector_node.cpp.i:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/src/nodes/tag_detector_node.cpp.i
+.PHONY : src/nodes/tag_detector_node.cpp.i
 
-src/quadposepub.s: src/quadposepub.cpp.s
+src/nodes/tag_detector_node.s: src/nodes/tag_detector_node.cpp.s
 
-.PHONY : src/quadposepub.s
+.PHONY : src/nodes/tag_detector_node.s
 
 # target to generate assembly for a file
-src/quadposepub.cpp.s:
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter.dir/build.make picopter/CMakeFiles/picopter.dir/src/quadposepub.cpp.s
-	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/quadpose.dir/build.make picopter/CMakeFiles/quadpose.dir/src/quadposepub.cpp.s
-.PHONY : src/quadposepub.cpp.s
+src/nodes/tag_detector_node.cpp.s:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/src/nodes/tag_detector_node.cpp.s
+.PHONY : src/nodes/tag_detector_node.cpp.s
+
+src/tag_detector.o: src/tag_detector.cpp.o
+
+.PHONY : src/tag_detector.o
+
+# target to build an object file
+src/tag_detector.cpp.o:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/src/tag_detector.cpp.o
+.PHONY : src/tag_detector.cpp.o
+
+src/tag_detector.i: src/tag_detector.cpp.i
+
+.PHONY : src/tag_detector.i
+
+# target to preprocess a source file
+src/tag_detector.cpp.i:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/src/tag_detector.cpp.i
+.PHONY : src/tag_detector.cpp.i
+
+src/tag_detector.s: src/tag_detector.cpp.s
+
+.PHONY : src/tag_detector.s
+
+# target to generate assembly for a file
+src/tag_detector.cpp.s:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/src/tag_detector.cpp.s
+.PHONY : src/tag_detector.cpp.s
 
 # Help Target
 help:
@@ -457,32 +616,44 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/local"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... edit_cache"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... install"
+	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... install/strip"
 	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... edit_cache"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... list_install_components"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_eus"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... tag_detector"
 	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... install"
-	@echo "... picopter"
-	@echo "... quadpose"
-	@echo "... test"
-	@echo "... src/quadposepub.o"
-	@echo "... src/quadposepub.i"
-	@echo "... src/quadposepub.s"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... std_msgs_generate_messages_eus"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... src/nodes/tag_detector_node.o"
+	@echo "... src/nodes/tag_detector_node.i"
+	@echo "... src/nodes/tag_detector_node.s"
+	@echo "... src/tag_detector.o"
+	@echo "... src/tag_detector.i"
+	@echo "... src/tag_detector.s"
 .PHONY : help
 
 

@@ -1,0 +1,8 @@
+prefix=/home/pi/picopter/install
+
+Name: usb_cam
+Description: Description of usb_cam
+Version: 0.3.6
+Cflags: -I/home/pi/picopter/install/include
+Libs: -L/home/pi/picopter/install/lib -lusb_cam
+Requires: 
