@@ -12,6 +12,9 @@
   <!-- C++ AprilTag detector and pose publisher -->
   <node name="tag_detector" pkg="picopter" type="tag_detector" output="screen"/>
   
+  <!-- Python IMU data publisher -->
+  <node name="imu_data" pkg="picopter" type="imu_data.py"/>
+  
   <!-- Python state estimator -->
   <node name="quad_state" pkg="picopter" type="quad_state.py" output="screen"/>
 </launch>

@@ -67,18 +67,6 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -100,6 +88,18 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -164,6 +164,81 @@ preinstall/fast:
 depend:
 	cd /home/pi/picopter/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_generate_messages_py.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_py.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_generate_messages_py.dir/rule
+
+# Convenience name for target.
+picopter_generate_messages_py: picopter/CMakeFiles/picopter_generate_messages_py.dir/rule
+
+.PHONY : picopter_generate_messages_py
+
+# fast build rule for target.
+picopter_generate_messages_py/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_py.dir/build.make picopter/CMakeFiles/picopter_generate_messages_py.dir/build
+.PHONY : picopter_generate_messages_py/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_gennodejs.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_gennodejs.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_gennodejs.dir/rule
+
+# Convenience name for target.
+picopter_gennodejs: picopter/CMakeFiles/picopter_gennodejs.dir/rule
+
+.PHONY : picopter_gennodejs
+
+# fast build rule for target.
+picopter_gennodejs/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_gennodejs.dir/build.make picopter/CMakeFiles/picopter_gennodejs.dir/build
+.PHONY : picopter_gennodejs/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_generate_messages_lisp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_lisp.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+picopter_generate_messages_lisp: picopter/CMakeFiles/picopter_generate_messages_lisp.dir/rule
+
+.PHONY : picopter_generate_messages_lisp
+
+# fast build rule for target.
+picopter_generate_messages_lisp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_lisp.dir/build.make picopter/CMakeFiles/picopter_generate_messages_lisp.dir/build
+.PHONY : picopter_generate_messages_lisp/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_gencpp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_gencpp.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_gencpp.dir/rule
+
+# Convenience name for target.
+picopter_gencpp: picopter/CMakeFiles/picopter_gencpp.dir/rule
+
+.PHONY : picopter_gencpp
+
+# fast build rule for target.
+picopter_gencpp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_gencpp.dir/build.make picopter/CMakeFiles/picopter_gencpp.dir/build
+.PHONY : picopter_gencpp/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/rule
+.PHONY : picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/rule
+
+# Convenience name for target.
+_picopter_generate_messages_check_deps_IMUOutput: picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/rule
+
+.PHONY : _picopter_generate_messages_check_deps_IMUOutput
+
+# fast build rule for target.
+_picopter_generate_messages_check_deps_IMUOutput/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/build.make picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/build
+.PHONY : _picopter_generate_messages_check_deps_IMUOutput/fast
 
 # Convenience name for target.
 picopter/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
@@ -256,6 +331,21 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+picopter/CMakeFiles/picopter_genpy.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_genpy.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_genpy.dir/rule
+
+# Convenience name for target.
+picopter_genpy: picopter/CMakeFiles/picopter_genpy.dir/rule
+
+.PHONY : picopter_genpy
+
+# fast build rule for target.
+picopter_genpy/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_genpy.dir/build.make picopter/CMakeFiles/picopter_genpy.dir/build
+.PHONY : picopter_genpy/fast
+
+# Convenience name for target.
 picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
 	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 .PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
@@ -301,6 +391,36 @@ sensor_msgs_generate_messages_eus/fast:
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+picopter_generate_messages_nodejs: picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/rule
+
+.PHONY : picopter_generate_messages_nodejs
+
+# fast build rule for target.
+picopter_generate_messages_nodejs/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/build
+.PHONY : picopter_generate_messages_nodejs/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_generate_messages.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_generate_messages.dir/rule
+
+# Convenience name for target.
+picopter_generate_messages: picopter/CMakeFiles/picopter_generate_messages.dir/rule
+
+.PHONY : picopter_generate_messages
+
+# fast build rule for target.
+picopter_generate_messages/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_generate_messages.dir/build.make picopter/CMakeFiles/picopter_generate_messages.dir/build
+.PHONY : picopter_generate_messages/fast
+
+# Convenience name for target.
 picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
 	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 .PHONY : picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
@@ -314,6 +434,21 @@ geometry_msgs_generate_messages_lisp: picopter/CMakeFiles/geometry_msgs_generate
 geometry_msgs_generate_messages_lisp/fast:
 	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make picopter/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_geneus.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_geneus.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_geneus.dir/rule
+
+# Convenience name for target.
+picopter_geneus: picopter/CMakeFiles/picopter_geneus.dir/rule
+
+.PHONY : picopter_geneus
+
+# fast build rule for target.
+picopter_geneus/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_geneus.dir/build.make picopter/CMakeFiles/picopter_geneus.dir/build
+.PHONY : picopter_geneus/fast
 
 # Convenience name for target.
 picopter/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
@@ -344,6 +479,36 @@ roscpp_generate_messages_eus: picopter/CMakeFiles/roscpp_generate_messages_eus.d
 roscpp_generate_messages_eus/fast:
 	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make picopter/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_generate_messages_eus.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_eus.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+picopter_generate_messages_eus: picopter/CMakeFiles/picopter_generate_messages_eus.dir/rule
+
+.PHONY : picopter_generate_messages_eus
+
+# fast build rule for target.
+picopter_generate_messages_eus/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_eus.dir/build.make picopter/CMakeFiles/picopter_generate_messages_eus.dir/build
+.PHONY : picopter_generate_messages_eus/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_generate_messages_cpp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_cpp.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+picopter_generate_messages_cpp: picopter/CMakeFiles/picopter_generate_messages_cpp.dir/rule
+
+.PHONY : picopter_generate_messages_cpp
+
+# fast build rule for target.
+picopter_generate_messages_cpp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_cpp.dir/build.make picopter/CMakeFiles/picopter_generate_messages_cpp.dir/build
+.PHONY : picopter_generate_messages_cpp/fast
 
 # Convenience name for target.
 picopter/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
@@ -419,6 +584,21 @@ tag_detector: picopter/CMakeFiles/tag_detector.dir/rule
 tag_detector/fast:
 	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/build
 .PHONY : tag_detector/fast
+
+# Convenience name for target.
+picopter/CMakeFiles/picopter_genlisp.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_genlisp.dir/rule
+.PHONY : picopter/CMakeFiles/picopter_genlisp.dir/rule
+
+# Convenience name for target.
+picopter_genlisp: picopter/CMakeFiles/picopter_genlisp.dir/rule
+
+.PHONY : picopter_genlisp
+
+# fast build rule for target.
+picopter_genlisp/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/picopter_genlisp.dir/build.make picopter/CMakeFiles/picopter_genlisp.dir/build
+.PHONY : picopter_genlisp/fast
 
 # Convenience name for target.
 picopter/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
@@ -616,9 +796,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/local"
-	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... picopter_generate_messages_py"
+	@echo "... picopter_gennodejs"
+	@echo "... picopter_generate_messages_lisp"
+	@echo "... picopter_gencpp"
+	@echo "... install"
+	@echo "... _picopter_generate_messages_check_deps_IMUOutput"
 	@echo "... install/strip"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
@@ -627,18 +812,25 @@ help:
 	@echo "... edit_cache"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... picopter_genpy"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... picopter_generate_messages_nodejs"
+	@echo "... picopter_generate_messages"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... list_install_components"
+	@echo "... picopter_geneus"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
+	@echo "... picopter_generate_messages_eus"
+	@echo "... picopter_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... tag_detector"
+	@echo "... picopter_genlisp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"

@@ -152,7 +152,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(picopter_EXPORTED_TARGETS "")
+set(picopter_EXPORTED_TARGETS "picopter_generate_messages_cpp;picopter_generate_messages_eus;picopter_generate_messages_lisp;picopter_generate_messages_nodejs;picopter_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${picopter_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -160,7 +160,7 @@ foreach(t ${picopter_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "")
+set(depends "message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -189,7 +189,7 @@ foreach(depend ${depends})
   list(APPEND picopter_EXPORTED_TARGETS ${${picopter_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "picopter-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${picopter_DIR}/${extra})

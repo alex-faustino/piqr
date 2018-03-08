@@ -11,12 +11,24 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   apriltags
+  message_generation
 )
 
 find_package(OpenCV REQUIRED)
 
+add_message_files(
+  FILES
+  IMUOutput.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+
 catkin_package(
   INCLUDE_DIRS include
+  CATKIN_DEPENDS message_runtime
 )
 
 include_directories(
