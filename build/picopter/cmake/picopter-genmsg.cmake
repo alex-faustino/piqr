@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "picopter: 2 messages, 0 services")
+message(STATUS "picopter: 3 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ipicopter:/home/pi/picopter/src/picopter/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -27,6 +27,11 @@ add_custom_target(_picopter_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "picopter" "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" ""
 )
 
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/Interface.msg" NAME_WE)
+add_custom_target(_picopter_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "picopter" "/home/pi/picopter/src/picopter/msg/Interface.msg" ""
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -41,6 +46,12 @@ _generate_msg_cpp(picopter
 )
 _generate_msg_cpp(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/picopter
+)
+_generate_msg_cpp(picopter
+  "/home/pi/picopter/src/picopter/msg/Interface.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/picopter
@@ -64,6 +75,8 @@ get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.m
 add_dependencies(picopter_generate_messages_cpp _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_cpp _picopter_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/Interface.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_cpp _picopter_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(picopter_gencpp)
@@ -82,6 +95,12 @@ _generate_msg_eus(picopter
 )
 _generate_msg_eus(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/picopter
+)
+_generate_msg_eus(picopter
+  "/home/pi/picopter/src/picopter/msg/Interface.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/picopter
@@ -105,6 +124,8 @@ get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.m
 add_dependencies(picopter_generate_messages_eus _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_eus _picopter_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/Interface.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_eus _picopter_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(picopter_geneus)
@@ -123,6 +144,12 @@ _generate_msg_lisp(picopter
 )
 _generate_msg_lisp(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/picopter
+)
+_generate_msg_lisp(picopter
+  "/home/pi/picopter/src/picopter/msg/Interface.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/picopter
@@ -146,6 +173,8 @@ get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.m
 add_dependencies(picopter_generate_messages_lisp _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_lisp _picopter_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/Interface.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_lisp _picopter_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(picopter_genlisp)
@@ -164,6 +193,12 @@ _generate_msg_nodejs(picopter
 )
 _generate_msg_nodejs(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/picopter
+)
+_generate_msg_nodejs(picopter
+  "/home/pi/picopter/src/picopter/msg/Interface.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/picopter
@@ -187,6 +222,8 @@ get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.m
 add_dependencies(picopter_generate_messages_nodejs _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_nodejs _picopter_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/Interface.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_nodejs _picopter_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(picopter_gennodejs)
@@ -209,6 +246,12 @@ _generate_msg_py(picopter
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/picopter
 )
+_generate_msg_py(picopter
+  "/home/pi/picopter/src/picopter/msg/Interface.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/picopter
+)
 
 ### Generating Services
 
@@ -227,6 +270,8 @@ add_dependencies(picopter_generate_messages picopter_generate_messages_py)
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_py _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_py _picopter_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/Interface.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_py _picopter_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

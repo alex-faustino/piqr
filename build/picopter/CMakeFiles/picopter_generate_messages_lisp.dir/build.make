@@ -55,6 +55,7 @@ include picopter/CMakeFiles/picopter_generate_messages_lisp.dir/progress.make
 
 picopter/CMakeFiles/picopter_generate_messages_lisp: /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/SpinRates.lisp
 picopter/CMakeFiles/picopter_generate_messages_lisp: /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/IMUOutput.lisp
+picopter/CMakeFiles/picopter_generate_messages_lisp: /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/Interface.lisp
 
 
 /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/SpinRates.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
@@ -67,9 +68,15 @@ picopter/CMakeFiles/picopter_generate_messages_lisp: /home/pi/picopter/devel/sha
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from picopter/IMUOutput.msg"
 	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/pi/picopter/src/picopter/msg/IMUOutput.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg
 
+/home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/Interface.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/Interface.lisp: /home/pi/picopter/src/picopter/msg/Interface.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from picopter/Interface.msg"
+	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/pi/picopter/src/picopter/msg/Interface.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg
+
 picopter_generate_messages_lisp: picopter/CMakeFiles/picopter_generate_messages_lisp
 picopter_generate_messages_lisp: /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/SpinRates.lisp
 picopter_generate_messages_lisp: /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/IMUOutput.lisp
+picopter_generate_messages_lisp: /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/Interface.lisp
 picopter_generate_messages_lisp: picopter/CMakeFiles/picopter_generate_messages_lisp.dir/build.make
 
 .PHONY : picopter_generate_messages_lisp

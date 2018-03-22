@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/picopter_generate_messages_eus"
   "/home/pi/picopter/devel/share/roseus/ros/picopter/msg/SpinRates.l"
   "/home/pi/picopter/devel/share/roseus/ros/picopter/msg/IMUOutput.l"
+  "/home/pi/picopter/devel/share/roseus/ros/picopter/msg/Interface.l"
   "/home/pi/picopter/devel/share/roseus/ros/picopter/manifest.l"
 )
 

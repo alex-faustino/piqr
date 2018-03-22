@@ -36,6 +36,7 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMP
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/picopter/msg" TYPE FILE FILES
     "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
     "/home/pi/picopter/src/picopter/msg/SpinRates.msg"
+    "/home/pi/picopter/src/picopter/msg/Interface.msg"
     )
 endif()
 

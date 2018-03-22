@@ -4,6 +4,8 @@ import rospy
 import os
 import pigpio
 import time
+from picopter.msg import SpinRates
+from picopter.msg import Interface
 
 # launch GPIO
 os.system ("sudo pigpiod")
@@ -41,40 +43,44 @@ class MotorControl:
 		time.sleep(1)
 		print('Motors Armed')
 		
+	# Switch the motor contoller between modes
+	def interface_cb(self, flags):
+		if not flags.is_calibrated:
+			self.motors_calibrate()
+		if flags.flight_mode and flags.is_calibrated:
+			self.flight_mode = True
+			
 	# Update the PWM of the motors
 	def control_cb(self, spin_rates): 
 		max_cur = 1500
 		min_cur = 1100
-		speed_one = (spin_rates.motor_one + 1000)
-		speed_two = (spin_rates.motor_two + 1000)
-		speed_three = (spin_rates.motor_three + 1000)
-		speed_four = (spin_rates.motor_four + 1000)
-		if speed_one > max_cur:
-			speed_one = max_cur
-		if speed_one < min_cur:
-			speed_one = min_cur
-		if speed_two > max_cur:
-			speed_two = max_cur
-		if speed_two < min_cur:
-			speed_two = min_cur
-		if speed_three > max_cur:
-			speed_three = max_cur
-		if speed_three < min_cur:
-			speed_three = min_cur
-		if speed_four > max_cur:
-			speed_four = max_cur
-		if speed_four < min_cur:
-			speed_four = min_cur
-    
-		print(str(int(speed_one)) + '\t' +
-			  str(int(speed_two)) + '\t' + 
-			  str(int(speed_three)) + '\t' + 
-			  str(int(speed_four)))
+		speed_one = spin_rates.motor_one
+		speed_two = spin_rates.motor_two
+		speed_three = spin_rates.motor_three
+		speed_four = spin_rates.motor_four
+		
+		if self.flight_mode:
+			if speed_one > max_cur:
+				speed_one = max_cur
+			if speed_one < min_cur:
+				speed_one = min_cur
+			if speed_two > max_cur:
+				speed_two = max_cur
+			if speed_two < min_cur:
+				speed_two = min_cur
+			if speed_three > max_cur:
+				speed_three = max_cur
+			if speed_three < min_cur:
+				speed_three = min_cur
+			if speed_four > max_cur:
+				speed_four = max_cur
+			if speed_four < min_cur:
+				speed_four = min_cur
 			  
-		self.pi.set_servo_pulsewidth(self.motor_one, speed_one)
-		self.pi.set_servo_pulsewidth(self.motor_two, speed_two)
-		self.pi.set_servo_pulsewidth(self.motor_three, speed_three)
-		self.pi.set_servo_pulsewidth(self.motor_four, speed_four)
+			self.pi.set_servo_pulsewidth(self.motor_one, speed_one)
+			self.pi.set_servo_pulsewidth(self.motor_two, speed_two)
+			self.pi.set_servo_pulsewidth(self.motor_three, speed_three)
+			self.pi.set_servo_pulsewidth(self.motor_four, speed_four)
     
     # Stop all motors
 	def motors_stop(self): 
@@ -111,9 +117,13 @@ class MotorControl:
 			self.motors_min()
 			time.sleep(1)
 			print "Calibration Complete"
+			time.sleep(1)
 		
 	def __init__(self):
 			
+		self.rate = rospy.Rate(90)
+		self.flight_mode = False
+		
 		# GPIO pin number and wire color
 		self.motor_one = 6 # yellow wire
 		self.motor_two = 13 # orange
@@ -123,13 +133,13 @@ class MotorControl:
 		self.min_val = 700  #min PWM
 		self.pi = pigpio.pi()
 		
-		is_calibrated = rospy.get_param('calibrate', False)
-		if not is_calibrated:
-			self.motors_calibrate()
+		# Subscribe to interface and goal publishers
+		rospy.Subscriber("interface_flags", Interface, self.interface_cb)
 		# Subscribe to spin rates publisher
-		#rospy.Subscriber("cmd_spin", SpinRates, self.control_cb)
+		rospy.Subscriber("cmd_spin", SpinRates, self.control_cb)
 		
-		self.motors_stop()
+		while not rospy.is_shutdown():
+			self.rate.sleep()
 		
 if __name__ == '__main__':
 	# Initialize node

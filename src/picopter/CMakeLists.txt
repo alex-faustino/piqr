@@ -20,6 +20,7 @@ add_message_files(
   FILES
   IMUOutput.msg
   SpinRates.msg
+  Interface.msg
 )
 
 generate_messages(
