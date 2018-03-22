@@ -17,4 +17,7 @@
   
   <!-- Python state estimator -->
   <node name="quad_state" pkg="picopter" type="quad_state.py" output="screen"/>
+  
+  <!-- Python ESC controller -->
+  <node name="motor_control" pkg="picopter" type="motor_control.py"
 </launch>

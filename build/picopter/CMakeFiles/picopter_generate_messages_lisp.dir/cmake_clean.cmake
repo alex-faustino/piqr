@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/picopter_generate_messages_lisp"
+  "/home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/SpinRates.lisp"
   "/home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/IMUOutput.lisp"
 )
 

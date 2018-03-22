@@ -64,6 +64,7 @@
 /home/pi/picopter/build/picopter/CMakeFiles/picopter_genpy.dir
 /home/pi/picopter/build/picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/pi/picopter/build/picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir
+/home/pi/picopter/build/picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir
 /home/pi/picopter/build/picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir
 /home/pi/picopter/build/picopter/CMakeFiles/picopter_generate_messages_nodejs.dir
 /home/pi/picopter/build/picopter/CMakeFiles/picopter_generate_messages.dir

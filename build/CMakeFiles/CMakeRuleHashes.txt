@@ -1,13 +1,19 @@
 # Hashes of file build rules.
 430c00e8c3a3bbc821339f4829c78a37 /home/pi/picopter/devel/include/picopter/IMUOutput.h
+221e39acceaeaef63467ba4680d79fa1 /home/pi/picopter/devel/include/picopter/SpinRates.h
 cfbc51ac6a8ac0c4ae3993cfb7f6eff4 /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_IMUOutput.py
+b3db9a8f01f3e0241ab60a1aee3969c3 /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_SpinRates.py
 7d2d789ab66ed44816d59e154bb410af /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/__init__.py
 861730a59a0ee97a422ef74d1c837790 /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/IMUOutput.lisp
+7515d64da63956ece8b4fd07c01b5f87 /home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/SpinRates.lisp
 5e26ee7fe5f3d59aee08310a14bbb637 /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/IMUOutput.js
+a5e635e2f556f64f6fa0a2a06414aaf7 /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/SpinRates.js
 a59398e587ec77e1bd04d3fa8b41845d /home/pi/picopter/devel/share/roseus/ros/picopter/manifest.l
 f84062280b17b2d51245ba4d8526584b /home/pi/picopter/devel/share/roseus/ros/picopter/msg/IMUOutput.l
+6d740ca051d4bd469ddef71c862cb10c /home/pi/picopter/devel/share/roseus/ros/picopter/msg/SpinRates.l
 6646ad990fd98f8514f550be749efc0d CMakeFiles/clean_test_results
 96f35af69cb996dd22297d41a1b32383 picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput
+bf22159ff5beecba76b65f8b9039803c picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates
 daea2838fccf164d9b682ece1737cfd4 picopter/CMakeFiles/picopter_generate_messages_cpp
 daea2838fccf164d9b682ece1737cfd4 picopter/CMakeFiles/picopter_generate_messages_eus
 daea2838fccf164d9b682ece1737cfd4 picopter/CMakeFiles/picopter_generate_messages_lisp

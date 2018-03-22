@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "picopter: 1 messages, 0 services")
+message(STATUS "picopter: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ipicopter:/home/pi/picopter/src/picopter/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -17,6 +17,11 @@ add_custom_target(picopter_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.msg" NAME_WE)
+add_custom_target(_picopter_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "picopter" "/home/pi/picopter/src/picopter/msg/SpinRates.msg" ""
+)
+
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_custom_target(_picopter_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "picopter" "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" ""
@@ -28,6 +33,12 @@ add_custom_target(_picopter_generate_messages_check_deps_${_filename}
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(picopter
+  "/home/pi/picopter/src/picopter/msg/SpinRates.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/picopter
+)
 _generate_msg_cpp(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
   "${MSG_I_FLAGS}"
@@ -49,6 +60,8 @@ add_custom_target(picopter_generate_messages_cpp
 add_dependencies(picopter_generate_messages picopter_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_cpp _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_cpp _picopter_generate_messages_check_deps_${_filename})
 
@@ -61,6 +74,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS picopter_generate_messages_cpp)
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(picopter
+  "/home/pi/picopter/src/picopter/msg/SpinRates.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/picopter
+)
 _generate_msg_eus(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
   "${MSG_I_FLAGS}"
@@ -82,6 +101,8 @@ add_custom_target(picopter_generate_messages_eus
 add_dependencies(picopter_generate_messages picopter_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_eus _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_eus _picopter_generate_messages_check_deps_${_filename})
 
@@ -94,6 +115,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS picopter_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(picopter
+  "/home/pi/picopter/src/picopter/msg/SpinRates.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/picopter
+)
 _generate_msg_lisp(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
   "${MSG_I_FLAGS}"
@@ -115,6 +142,8 @@ add_custom_target(picopter_generate_messages_lisp
 add_dependencies(picopter_generate_messages picopter_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_lisp _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_lisp _picopter_generate_messages_check_deps_${_filename})
 
@@ -127,6 +156,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS picopter_generate_messages_lisp)
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(picopter
+  "/home/pi/picopter/src/picopter/msg/SpinRates.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/picopter
+)
 _generate_msg_nodejs(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
   "${MSG_I_FLAGS}"
@@ -148,6 +183,8 @@ add_custom_target(picopter_generate_messages_nodejs
 add_dependencies(picopter_generate_messages picopter_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_nodejs _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_nodejs _picopter_generate_messages_check_deps_${_filename})
 
@@ -160,6 +197,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS picopter_generate_messages_nodejs)
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(picopter
+  "/home/pi/picopter/src/picopter/msg/SpinRates.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/picopter
+)
 _generate_msg_py(picopter
   "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
   "${MSG_I_FLAGS}"
@@ -181,6 +224,8 @@ add_custom_target(picopter_generate_messages_py
 add_dependencies(picopter_generate_messages picopter_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/SpinRates.msg" NAME_WE)
+add_dependencies(picopter_generate_messages_py _picopter_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/pi/picopter/src/picopter/msg/IMUOutput.msg" NAME_WE)
 add_dependencies(picopter_generate_messages_py _picopter_generate_messages_check_deps_${_filename})
 

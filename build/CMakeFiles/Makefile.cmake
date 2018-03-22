@@ -263,6 +263,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "picopter/CMakeFiles/picopter_genpy.dir/DependInfo.cmake"
   "picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/DependInfo.cmake"
+  "picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/DependInfo.cmake"
   "picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/DependInfo.cmake"
   "picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/DependInfo.cmake"
   "picopter/CMakeFiles/picopter_generate_messages.dir/DependInfo.cmake"

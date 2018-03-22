@@ -516,6 +516,7 @@ picopter/clean: picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 picopter/clean: picopter/CMakeFiles/picopter_genpy.dir/clean
 picopter/clean: picopter/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 picopter/clean: picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
+picopter/clean: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/clean
 picopter/clean: picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 picopter/clean: picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/clean
 picopter/clean: picopter/CMakeFiles/picopter_generate_messages.dir/clean
@@ -553,15 +554,16 @@ picopter/preinstall:
 
 # All Build rule for target.
 picopter/CMakeFiles/picopter_generate_messages_py.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/all
+picopter/CMakeFiles/picopter_generate_messages_py.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/all
 picopter/CMakeFiles/picopter_generate_messages_py.dir/all: picopter/CMakeFiles/std_msgs_generate_messages_py.dir/all
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_py.dir/build.make picopter/CMakeFiles/picopter_generate_messages_py.dir/depend
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_py.dir/build.make picopter/CMakeFiles/picopter_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=32,33 "Built target picopter_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=36,37,38 "Built target picopter_generate_messages_py"
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_py.dir/rule
@@ -593,7 +595,7 @@ picopter/CMakeFiles/picopter_gennodejs.dir/all: picopter/CMakeFiles/picopter_gen
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_gennodejs.dir/rule
@@ -618,15 +620,16 @@ clean: picopter/CMakeFiles/picopter_gennodejs.dir/clean
 
 # All Build rule for target.
 picopter/CMakeFiles/picopter_generate_messages_lisp.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/all
+picopter/CMakeFiles/picopter_generate_messages_lisp.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/all
 picopter/CMakeFiles/picopter_generate_messages_lisp.dir/all: picopter/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_lisp.dir/build.make picopter/CMakeFiles/picopter_generate_messages_lisp.dir/depend
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_lisp.dir/build.make picopter/CMakeFiles/picopter_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=30 "Built target picopter_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=32,33 "Built target picopter_generate_messages_lisp"
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_lisp.dir/rule
@@ -658,7 +661,7 @@ picopter/CMakeFiles/picopter_gencpp.dir/all: picopter/CMakeFiles/picopter_genera
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_gencpp.dir/rule
@@ -914,7 +917,7 @@ picopter/CMakeFiles/picopter_genpy.dir/all: picopter/CMakeFiles/picopter_generat
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_genpy.dir/rule
@@ -999,6 +1002,38 @@ clean: picopter/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir
+
+# All Build rule for target.
+picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/all:
+	$(MAKE) -f picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/build.make picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/depend
+	$(MAKE) -f picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/build.make picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num= "Built target _picopter_generate_messages_check_deps_SpinRates"
+.PHONY : picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/all
+
+# Build rule for subdir invocation for target.
+picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
+.PHONY : picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/rule
+
+# Convenience name for target.
+_picopter_generate_messages_check_deps_SpinRates: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/rule
+
+.PHONY : _picopter_generate_messages_check_deps_SpinRates
+
+# clean rule for target.
+picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/clean:
+	$(MAKE) -f picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/build.make picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/clean
+.PHONY : picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/clean
+
+# clean rule for target.
+clean: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
@@ -1035,15 +1070,16 @@ clean: picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 
 # All Build rule for target.
 picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/all
+picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/all
 picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/all: picopter/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/depend
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/build.make picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=31 "Built target picopter_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=34,35 "Built target picopter_generate_messages_nodejs"
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/rule
@@ -1084,7 +1120,7 @@ all: picopter/CMakeFiles/picopter_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_generate_messages.dir/rule
@@ -1148,7 +1184,7 @@ picopter/CMakeFiles/picopter_geneus.dir/all: picopter/CMakeFiles/picopter_genera
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_geneus.dir/rule
@@ -1237,15 +1273,16 @@ clean: picopter/CMakeFiles/roscpp_generate_messages_eus.dir/clean
 
 # All Build rule for target.
 picopter/CMakeFiles/picopter_generate_messages_eus.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/all
+picopter/CMakeFiles/picopter_generate_messages_eus.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/all
 picopter/CMakeFiles/picopter_generate_messages_eus.dir/all: picopter/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_eus.dir/build.make picopter/CMakeFiles/picopter_generate_messages_eus.dir/depend
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_eus.dir/build.make picopter/CMakeFiles/picopter_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=28,29 "Built target picopter_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=29,30,31 "Built target picopter_generate_messages_eus"
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_eus.dir/rule
@@ -1270,15 +1307,16 @@ clean: picopter/CMakeFiles/picopter_generate_messages_eus.dir/clean
 
 # All Build rule for target.
 picopter/CMakeFiles/picopter_generate_messages_cpp.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_IMUOutput.dir/all
+picopter/CMakeFiles/picopter_generate_messages_cpp.dir/all: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/all
 picopter/CMakeFiles/picopter_generate_messages_cpp.dir/all: picopter/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_cpp.dir/build.make picopter/CMakeFiles/picopter_generate_messages_cpp.dir/depend
 	$(MAKE) -f picopter/CMakeFiles/picopter_generate_messages_cpp.dir/build.make picopter/CMakeFiles/picopter_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=27 "Built target picopter_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=27,28 "Built target picopter_generate_messages_cpp"
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_cpp.dir/rule
@@ -1433,7 +1471,7 @@ clean: picopter/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 picopter/CMakeFiles/tag_detector.dir/all: apriltags/CMakeFiles/apriltags.dir/all
 	$(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/depend
 	$(MAKE) -f picopter/CMakeFiles/tag_detector.dir/build.make picopter/CMakeFiles/tag_detector.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=34,35,36 "Built target tag_detector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=39,40,41 "Built target tag_detector"
 .PHONY : picopter/CMakeFiles/tag_detector.dir/all
 
 # Include target in all.
@@ -1475,7 +1513,7 @@ picopter/CMakeFiles/picopter_genlisp.dir/all: picopter/CMakeFiles/picopter_gener
 
 # Build rule for subdir invocation for target.
 picopter/CMakeFiles/picopter_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/picopter/build/CMakeFiles 0
 .PHONY : picopter/CMakeFiles/picopter_genlisp.dir/rule
@@ -1975,7 +2013,7 @@ clean: usb_cam/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
 usb_cam/CMakeFiles/usb_cam_node.dir/all: usb_cam/CMakeFiles/usb_cam.dir/all
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam_node.dir/build.make usb_cam/CMakeFiles/usb_cam_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=39,40 "Built target usb_cam_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=44,45 "Built target usb_cam_node"
 .PHONY : usb_cam/CMakeFiles/usb_cam_node.dir/all
 
 # Include target in all.
@@ -2012,7 +2050,7 @@ clean: usb_cam/CMakeFiles/usb_cam_node.dir/clean
 usb_cam/CMakeFiles/usb_cam.dir/all:
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/depend
 	$(MAKE) -f usb_cam/CMakeFiles/usb_cam.dir/build.make usb_cam/CMakeFiles/usb_cam.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=37,38 "Built target usb_cam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=42,43 "Built target usb_cam"
 .PHONY : usb_cam/CMakeFiles/usb_cam.dir/all
 
 # Include target in all.

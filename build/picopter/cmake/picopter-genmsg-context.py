@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
+messages_str = "/home/pi/picopter/src/picopter/msg/IMUOutput.msg;/home/pi/picopter/src/picopter/msg/SpinRates.msg"
 services_str = ""
 pkg_name = "picopter"
 dependencies_str = "std_msgs"

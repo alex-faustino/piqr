@@ -491,6 +491,19 @@ geometry_msgs_generate_messages_eus/fast:
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named _picopter_generate_messages_check_deps_SpinRates
+
+# Build rule for target.
+_picopter_generate_messages_check_deps_SpinRates: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _picopter_generate_messages_check_deps_SpinRates
+.PHONY : _picopter_generate_messages_check_deps_SpinRates
+
+# fast build rule for target.
+_picopter_generate_messages_check_deps_SpinRates/fast:
+	$(MAKE) -f picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/build.make picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/build
+.PHONY : _picopter_generate_messages_check_deps_SpinRates/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -931,6 +944,7 @@ help:
 	@echo "... picopter_genpy"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... _picopter_generate_messages_check_deps_SpinRates"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... picopter_generate_messages_nodejs"
 	@echo "... picopter_generate_messages"

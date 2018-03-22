@@ -3,5 +3,7 @@
   (:export
    "<IMUOUTPUT>"
    "IMUOUTPUT"
+   "<SPINRATES>"
+   "SPINRATES"
   ))
 

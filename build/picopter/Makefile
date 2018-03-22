@@ -376,6 +376,21 @@ geometry_msgs_generate_messages_eus/fast:
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/rule
+.PHONY : picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/rule
+
+# Convenience name for target.
+_picopter_generate_messages_check_deps_SpinRates: picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/rule
+
+.PHONY : _picopter_generate_messages_check_deps_SpinRates
+
+# fast build rule for target.
+_picopter_generate_messages_check_deps_SpinRates/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/build.make picopter/CMakeFiles/_picopter_generate_messages_check_deps_SpinRates.dir/build
+.PHONY : _picopter_generate_messages_check_deps_SpinRates/fast
+
+# Convenience name for target.
 picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -815,6 +830,7 @@ help:
 	@echo "... picopter_genpy"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... _picopter_generate_messages_check_deps_SpinRates"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... picopter_generate_messages_nodejs"
 	@echo "... picopter_generate_messages"

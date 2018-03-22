@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/picopter_generate_messages_nodejs"
+  "/home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/SpinRates.js"
   "/home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/IMUOutput.js"
 )
 
