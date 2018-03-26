@@ -25,11 +25,17 @@ struct Interface_
 
   Interface_()
     : is_calibrated(false)
-    , flight_mode(false)  {
+    , arm_esc(false)
+    , flight_mode(false)
+    , stop_motors(false)
+    , shutdown(false)  {
     }
   Interface_(const ContainerAllocator& _alloc)
     : is_calibrated(false)
-    , flight_mode(false)  {
+    , arm_esc(false)
+    , flight_mode(false)
+    , stop_motors(false)
+    , shutdown(false)  {
   (void)_alloc;
     }
 
@@ -38,8 +44,17 @@ struct Interface_
    typedef uint8_t _is_calibrated_type;
   _is_calibrated_type is_calibrated;
 
+   typedef uint8_t _arm_esc_type;
+  _arm_esc_type arm_esc;
+
    typedef uint8_t _flight_mode_type;
   _flight_mode_type flight_mode;
+
+   typedef uint8_t _stop_motors_type;
+  _stop_motors_type stop_motors;
+
+   typedef uint8_t _shutdown_type;
+  _shutdown_type shutdown;
 
 
 
@@ -119,12 +134,12 @@ struct MD5Sum< ::picopter::Interface_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "aa23f60b03916a655a96c1c5cac351ad";
+    return "d48df5094a97ac2271d10199017658de";
   }
 
   static const char* value(const ::picopter::Interface_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xaa23f60b03916a65ULL;
-  static const uint64_t static_value2 = 0x5a96c1c5cac351adULL;
+  static const uint64_t static_value1 = 0xd48df5094a97ac22ULL;
+  static const uint64_t static_value2 = 0x71d10199017658deULL;
 };
 
 template<class ContainerAllocator>
@@ -144,7 +159,10 @@ struct Definition< ::picopter::Interface_<ContainerAllocator> >
   static const char* value()
   {
     return "bool is_calibrated\n\
+bool arm_esc\n\
 bool flight_mode\n\
+bool stop_motors\n\
+bool shutdown\n\
 ";
   }
 
@@ -164,7 +182,10 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.is_calibrated);
+      stream.next(m.arm_esc);
       stream.next(m.flight_mode);
+      stream.next(m.stop_motors);
+      stream.next(m.shutdown);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -185,8 +206,14 @@ struct Printer< ::picopter::Interface_<ContainerAllocator> >
   {
     s << indent << "is_calibrated: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.is_calibrated);
+    s << indent << "arm_esc: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.arm_esc);
     s << indent << "flight_mode: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.flight_mode);
+    s << indent << "stop_motors: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.stop_motors);
+    s << indent << "shutdown: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.shutdown);
   }
 };
 

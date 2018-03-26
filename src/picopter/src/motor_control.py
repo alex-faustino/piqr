@@ -47,8 +47,13 @@ class MotorControl:
 	def interface_cb(self, flags):
 		if not flags.is_calibrated:
 			self.motors_calibrate()
+		if flags.arm_esc and flags.is_calibrated:
+			self.motors_start()
+			self.motors_arm()
 		if flags.flight_mode and flags.is_calibrated:
 			self.flight_mode = True
+		if flags.shutdown:
+			self.motors_stop()
 			
 	# Update the PWM of the motors
 	def control_cb(self, spin_rates): 
@@ -84,7 +89,6 @@ class MotorControl:
     
     # Stop all motors
 	def motors_stop(self): 
-		#This will stop every action your Pi is performing for all motors.
 		self.pi.set_servo_pulsewidth(self.motor_one, 0)
 		self.pi.set_servo_pulsewidth(self.motor_two, 0)
 		self.pi.set_servo_pulsewidth(self.motor_three, 0)
@@ -93,6 +97,7 @@ class MotorControl:
 		os.system ("sudo killall pigpiod")
 		
 		
+	# Shutdown
 	#This is the auto calibration procedure of a normal ESC
 	def motors_calibrate(self):
 		

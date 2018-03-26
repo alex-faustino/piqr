@@ -19,7 +19,10 @@ class Interface {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.is_calibrated = null;
+      this.arm_esc = null;
       this.flight_mode = null;
+      this.stop_motors = null;
+      this.shutdown = null;
     }
     else {
       if (initObj.hasOwnProperty('is_calibrated')) {
@@ -28,11 +31,29 @@ class Interface {
       else {
         this.is_calibrated = false;
       }
+      if (initObj.hasOwnProperty('arm_esc')) {
+        this.arm_esc = initObj.arm_esc
+      }
+      else {
+        this.arm_esc = false;
+      }
       if (initObj.hasOwnProperty('flight_mode')) {
         this.flight_mode = initObj.flight_mode
       }
       else {
         this.flight_mode = false;
+      }
+      if (initObj.hasOwnProperty('stop_motors')) {
+        this.stop_motors = initObj.stop_motors
+      }
+      else {
+        this.stop_motors = false;
+      }
+      if (initObj.hasOwnProperty('shutdown')) {
+        this.shutdown = initObj.shutdown
+      }
+      else {
+        this.shutdown = false;
       }
     }
   }
@@ -41,8 +62,14 @@ class Interface {
     // Serializes a message object of type Interface
     // Serialize message field [is_calibrated]
     bufferOffset = _serializer.bool(obj.is_calibrated, buffer, bufferOffset);
+    // Serialize message field [arm_esc]
+    bufferOffset = _serializer.bool(obj.arm_esc, buffer, bufferOffset);
     // Serialize message field [flight_mode]
     bufferOffset = _serializer.bool(obj.flight_mode, buffer, bufferOffset);
+    // Serialize message field [stop_motors]
+    bufferOffset = _serializer.bool(obj.stop_motors, buffer, bufferOffset);
+    // Serialize message field [shutdown]
+    bufferOffset = _serializer.bool(obj.shutdown, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -52,13 +79,19 @@ class Interface {
     let data = new Interface(null);
     // Deserialize message field [is_calibrated]
     data.is_calibrated = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [arm_esc]
+    data.arm_esc = _deserializer.bool(buffer, bufferOffset);
     // Deserialize message field [flight_mode]
     data.flight_mode = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [stop_motors]
+    data.stop_motors = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [shutdown]
+    data.shutdown = _deserializer.bool(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 2;
+    return 5;
   }
 
   static datatype() {
@@ -68,14 +101,17 @@ class Interface {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'aa23f60b03916a655a96c1c5cac351ad';
+    return 'd48df5094a97ac2271d10199017658de';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     bool is_calibrated
+    bool arm_esc
     bool flight_mode
+    bool stop_motors
+    bool shutdown
     
     `;
   }
@@ -93,11 +129,32 @@ class Interface {
       resolved.is_calibrated = false
     }
 
+    if (msg.arm_esc !== undefined) {
+      resolved.arm_esc = msg.arm_esc;
+    }
+    else {
+      resolved.arm_esc = false
+    }
+
     if (msg.flight_mode !== undefined) {
       resolved.flight_mode = msg.flight_mode;
     }
     else {
       resolved.flight_mode = false
+    }
+
+    if (msg.stop_motors !== undefined) {
+      resolved.stop_motors = msg.stop_motors;
+    }
+    else {
+      resolved.stop_motors = false
+    }
+
+    if (msg.shutdown !== undefined) {
+      resolved.shutdown = msg.shutdown;
+    }
+    else {
+      resolved.shutdown = false
     }
 
     return resolved;

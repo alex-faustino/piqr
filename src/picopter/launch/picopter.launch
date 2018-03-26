@@ -1,6 +1,6 @@
 <launch>
   <!-- Python user interface -->
-  <node name="interface" pkg="picopter" type="interface.py" output="screen"/>
+  <node name="interface" pkg="picopter" type="interface.py" output="screen" launch-prefix="xterm -e"/>
   
   <!-- Camera driver -->
   <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" >
@@ -28,5 +28,5 @@
   <node name="quad_controller" pkg="picopter" type="quad_controller.py"/>
   
   <!-- Python ESC controller -->
-  <node name="motor_control" pkg="picopter" type="motor_control.py" output="screen"/>
+  <node name="motor_control" pkg="picopter" type="motor_control.py" output="screen" launch-prefix="xterm -e"/>
 </launch>

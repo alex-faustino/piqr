@@ -7,14 +7,17 @@ import struct
 
 
 class Interface(genpy.Message):
-  _md5sum = "aa23f60b03916a655a96c1c5cac351ad"
+  _md5sum = "d48df5094a97ac2271d10199017658de"
   _type = "picopter/Interface"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """bool is_calibrated
+bool arm_esc
 bool flight_mode
+bool stop_motors
+bool shutdown
 """
-  __slots__ = ['is_calibrated','flight_mode']
-  _slot_types = ['bool','bool']
+  __slots__ = ['is_calibrated','arm_esc','flight_mode','stop_motors','shutdown']
+  _slot_types = ['bool','bool','bool','bool','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -24,7 +27,7 @@ bool flight_mode
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       is_calibrated,flight_mode
+       is_calibrated,arm_esc,flight_mode,stop_motors,shutdown
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -35,11 +38,20 @@ bool flight_mode
       #message fields cannot be None, assign default values for those that are
       if self.is_calibrated is None:
         self.is_calibrated = False
+      if self.arm_esc is None:
+        self.arm_esc = False
       if self.flight_mode is None:
         self.flight_mode = False
+      if self.stop_motors is None:
+        self.stop_motors = False
+      if self.shutdown is None:
+        self.shutdown = False
     else:
       self.is_calibrated = False
+      self.arm_esc = False
       self.flight_mode = False
+      self.stop_motors = False
+      self.shutdown = False
 
   def _get_types(self):
     """
@@ -54,7 +66,7 @@ bool flight_mode
     """
     try:
       _x = self
-      buff.write(_get_struct_2B().pack(_x.is_calibrated, _x.flight_mode))
+      buff.write(_get_struct_5B().pack(_x.is_calibrated, _x.arm_esc, _x.flight_mode, _x.stop_motors, _x.shutdown))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -67,10 +79,13 @@ bool flight_mode
       end = 0
       _x = self
       start = end
-      end += 2
-      (_x.is_calibrated, _x.flight_mode,) = _get_struct_2B().unpack(str[start:end])
+      end += 5
+      (_x.is_calibrated, _x.arm_esc, _x.flight_mode, _x.stop_motors, _x.shutdown,) = _get_struct_5B().unpack(str[start:end])
       self.is_calibrated = bool(self.is_calibrated)
+      self.arm_esc = bool(self.arm_esc)
       self.flight_mode = bool(self.flight_mode)
+      self.stop_motors = bool(self.stop_motors)
+      self.shutdown = bool(self.shutdown)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -84,7 +99,7 @@ bool flight_mode
     """
     try:
       _x = self
-      buff.write(_get_struct_2B().pack(_x.is_calibrated, _x.flight_mode))
+      buff.write(_get_struct_5B().pack(_x.is_calibrated, _x.arm_esc, _x.flight_mode, _x.stop_motors, _x.shutdown))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -98,10 +113,13 @@ bool flight_mode
       end = 0
       _x = self
       start = end
-      end += 2
-      (_x.is_calibrated, _x.flight_mode,) = _get_struct_2B().unpack(str[start:end])
+      end += 5
+      (_x.is_calibrated, _x.arm_esc, _x.flight_mode, _x.stop_motors, _x.shutdown,) = _get_struct_5B().unpack(str[start:end])
       self.is_calibrated = bool(self.is_calibrated)
+      self.arm_esc = bool(self.arm_esc)
       self.flight_mode = bool(self.flight_mode)
+      self.stop_motors = bool(self.stop_motors)
+      self.shutdown = bool(self.shutdown)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -110,9 +128,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2B = None
-def _get_struct_2B():
-    global _struct_2B
-    if _struct_2B is None:
-        _struct_2B = struct.Struct("<2B")
-    return _struct_2B
+_struct_5B = None
+def _get_struct_5B():
+    global _struct_5B
+    if _struct_5B is None:
+        _struct_5B = struct.Struct("<5B")
+    return _struct_5B
