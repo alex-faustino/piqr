@@ -1,16 +1,64 @@
 import time
+import math
 import scipy.linalg
 
 import numpy as np
 
-from pid import PID
-
 class QuadController:
+	# Convert body rates to Euler rates
+	def body_to_euler(self, quad_state):
+		c2 = math.cos(quad_state.pitch)
+		s2 = math.sin(quad_state.pitch)
+		c3 = math.cos(quad_state.roll)
+		s3 = math.sin(quad_state.roll)
+		
+		S = np.array([[0.0, s3, c3], 
+					  [0.0, c2*c3, -c2*s3],
+					  [c2, s2*s3, s2*c3]])
+		S = (1/c2)*S
+		
+		theta_dots = np.dot(S, np.array([[quad_state.yaw_rate], 
+										 [quad_state.pitch_rate], 
+										 [quad_state.roll_rate]]))
+										 
+		return theta_dots
+		
 	# Observe position error and compute desired roll, pitch, yaw, and
 	# thrust
-	def outer_loop(self, inputs_nominal, quad_state):
-		self.roll_desired = np.dot(-self.K_roll, np.array([[quad_state.y], [quad_state.y_dot]]))
+	def postion_control(self, inputs_nominal, quad_state):
+		roll_desired = np.dot(-self.K_y, np.array([[quad_state.y], 
+												   [quad_state.y_dot]]))
+		pitch_desired = np.dot(self.K_x, np.array([[quad_state.x], 
+												   [quad_state.x_dot]]))
+		yaw_desired = 0.0
+		thrust_delta = np.dot(-self.K_z, np.array([[quad_state.z], 
+												   [quad_state.z_dot]]))
+		inputs_delta = np.array([[roll_desired], 
+								 [pitch_desired], 
+								 [yaw_desired], 
+								 [thrust_delta]])
+								 
+		inputs = inputs_nominal + inputs_delta
 		
+		return inputs
+	
+	# Regulate attitude
+	def attitude_control(self, position_inputs, quad_state):
+		# Convert gyro measurments to euler rates
+		theta_dots = self.body_to_euler(quad_state)
+		
+		roll_torque = np.dot(-self.K_roll, np.array([[quad_state.roll - position_inputs[0]], 
+												     [theta_dots[2]]]))
+		pitch_torque = np.dot(-self.K_pitch, np.array([[quad_state.pitch + position_inputs[1]], 
+												       [theta_dots[1]]]))
+		yaw_torque = np.dot(-self.K_yaw, np.array([[quad_state.yaw - position_inputs[2]], 
+												   [theta_dots[0]]]))
+		inputs = np.array([[roll_torque], 
+						   [pitch_torque], 
+						   [yaw_torque],
+						   [position_inputs[3]]])
+		
+		return inputs
 		
 	# Convert from thrusts and torques to spin rates
 	def input_to_spin(self, inputs):
@@ -73,7 +121,6 @@ class QuadController:
 		Q_roll = np.array([[20.0, 0], [0, 0.8]])
 		R_roll = np.array([0.7])
 		self.K_roll = self.dlqr(A_roll, B_roll, Q_roll, R_roll)
-		print self.K_roll
 		
 		# pitch
 		A_pitch = np.array([[1, self.dt], [0, 1]])

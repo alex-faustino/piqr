@@ -11,6 +11,7 @@ from imu import Imu
 from motor_controller import MotorController
 from quad_controller import QuadController
 from flight_planner import FlightPlanner
+from quad_state import QuadState
 
 # Launch GPIO library
 os.system ("sudo pigpiod")
@@ -23,6 +24,7 @@ class Picopter:
 		self.mc = mc
 		self.qc = qc
 		self.fp = fp
+		self.quad_state = QuadState()
 		
 		self.mc.motors_start()
 		self.mc.motors_arm()
