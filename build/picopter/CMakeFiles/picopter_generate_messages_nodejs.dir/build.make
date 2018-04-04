@@ -56,6 +56,7 @@ include picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/progress.make
 picopter/CMakeFiles/picopter_generate_messages_nodejs: /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/SpinRates.js
 picopter/CMakeFiles/picopter_generate_messages_nodejs: /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/IMUOutput.js
 picopter/CMakeFiles/picopter_generate_messages_nodejs: /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/Interface.js
+picopter/CMakeFiles/picopter_generate_messages_nodejs: /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/CamMeasurement.js
 
 
 /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/SpinRates.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
@@ -73,10 +74,16 @@ picopter/CMakeFiles/picopter_generate_messages_nodejs: /home/pi/picopter/devel/s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from picopter/Interface.msg"
 	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/pi/picopter/src/picopter/msg/Interface.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg
 
+/home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/CamMeasurement.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/CamMeasurement.js: /home/pi/picopter/src/picopter/msg/CamMeasurement.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from picopter/CamMeasurement.msg"
+	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/pi/picopter/src/picopter/msg/CamMeasurement.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg
+
 picopter_generate_messages_nodejs: picopter/CMakeFiles/picopter_generate_messages_nodejs
 picopter_generate_messages_nodejs: /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/SpinRates.js
 picopter_generate_messages_nodejs: /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/IMUOutput.js
 picopter_generate_messages_nodejs: /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/Interface.js
+picopter_generate_messages_nodejs: /home/pi/picopter/devel/share/gennodejs/ros/picopter/msg/CamMeasurement.js
 picopter_generate_messages_nodejs: picopter/CMakeFiles/picopter_generate_messages_nodejs.dir/build.make
 
 .PHONY : picopter_generate_messages_nodejs

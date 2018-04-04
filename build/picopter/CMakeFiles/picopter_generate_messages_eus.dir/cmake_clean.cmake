@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "/home/pi/picopter/devel/share/roseus/ros/picopter/msg/SpinRates.l"
   "/home/pi/picopter/devel/share/roseus/ros/picopter/msg/IMUOutput.l"
   "/home/pi/picopter/devel/share/roseus/ros/picopter/msg/Interface.l"
+  "/home/pi/picopter/devel/share/roseus/ros/picopter/msg/CamMeasurement.l"
   "/home/pi/picopter/devel/share/roseus/ros/picopter/manifest.l"
 )
 

@@ -37,6 +37,7 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMP
     "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
     "/home/pi/picopter/src/picopter/msg/SpinRates.msg"
     "/home/pi/picopter/src/picopter/msg/Interface.msg"
+    "/home/pi/picopter/src/picopter/msg/CamMeasurement.msg"
     )
 endif()
 

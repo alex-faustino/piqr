@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "/home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/SpinRates.lisp"
   "/home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/IMUOutput.lisp"
   "/home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/Interface.lisp"
+  "/home/pi/picopter/devel/share/common-lisp/ros/picopter/msg/CamMeasurement.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

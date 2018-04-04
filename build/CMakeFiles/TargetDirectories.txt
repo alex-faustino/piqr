@@ -45,6 +45,7 @@
 /home/pi/picopter/build/apriltags/CMakeFiles/install/strip.dir
 /home/pi/picopter/build/apriltags/CMakeFiles/edit_cache.dir
 /home/pi/picopter/build/picopter/CMakeFiles/install/strip.dir
+/home/pi/picopter/build/picopter/CMakeFiles/install/local.dir
 /home/pi/picopter/build/picopter/CMakeFiles/roscpp_generate_messages_py.dir
 /home/pi/picopter/build/picopter/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
 /home/pi/picopter/build/picopter/CMakeFiles/roscpp_generate_messages_nodejs.dir
@@ -86,11 +87,11 @@
 /home/pi/picopter/build/picopter/CMakeFiles/picopter_generate_messages_lisp.dir
 /home/pi/picopter/build/picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir
 /home/pi/picopter/build/picopter/CMakeFiles/picopter_gennodejs.dir
+/home/pi/picopter/build/picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir
 /home/pi/picopter/build/picopter/CMakeFiles/picopter_generate_messages_py.dir
 /home/pi/picopter/build/picopter/CMakeFiles/test.dir
 /home/pi/picopter/build/picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir
 /home/pi/picopter/build/picopter/CMakeFiles/rebuild_cache.dir
-/home/pi/picopter/build/picopter/CMakeFiles/install/local.dir
 /home/pi/picopter/build/usb_cam/CMakeFiles/install/strip.dir
 /home/pi/picopter/build/usb_cam/CMakeFiles/install.dir
 /home/pi/picopter/build/usb_cam/CMakeFiles/list_install_components.dir

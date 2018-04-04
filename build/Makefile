@@ -803,6 +803,19 @@ picopter_gennodejs/fast:
 .PHONY : picopter_gennodejs/fast
 
 #=============================================================================
+# Target rules for targets named _picopter_generate_messages_check_deps_CamMeasurement
+
+# Build rule for target.
+_picopter_generate_messages_check_deps_CamMeasurement: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _picopter_generate_messages_check_deps_CamMeasurement
+.PHONY : _picopter_generate_messages_check_deps_CamMeasurement
+
+# fast build rule for target.
+_picopter_generate_messages_check_deps_CamMeasurement/fast:
+	$(MAKE) -f picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/build.make picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/build
+.PHONY : _picopter_generate_messages_check_deps_CamMeasurement/fast
+
+#=============================================================================
 # Target rules for targets named picopter_generate_messages_py
 
 # Build rule for target.
@@ -981,6 +994,7 @@ help:
 	@echo "... picopter_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... picopter_gennodejs"
+	@echo "... _picopter_generate_messages_check_deps_CamMeasurement"
 	@echo "... picopter_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... std_srvs_generate_messages_nodejs"

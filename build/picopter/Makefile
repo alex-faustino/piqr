@@ -67,6 +67,17 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -121,17 +132,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -736,6 +736,21 @@ picopter_gennodejs/fast:
 .PHONY : picopter_gennodejs/fast
 
 # Convenience name for target.
+picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/rule:
+	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/rule
+.PHONY : picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/rule
+
+# Convenience name for target.
+_picopter_generate_messages_check_deps_CamMeasurement: picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/rule
+
+.PHONY : _picopter_generate_messages_check_deps_CamMeasurement
+
+# fast build rule for target.
+_picopter_generate_messages_check_deps_CamMeasurement/fast:
+	cd /home/pi/picopter/build && $(MAKE) -f picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/build.make picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/build
+.PHONY : _picopter_generate_messages_check_deps_CamMeasurement/fast
+
+# Convenience name for target.
 picopter/CMakeFiles/picopter_generate_messages_py.dir/rule:
 	cd /home/pi/picopter/build && $(MAKE) -f CMakeFiles/Makefile2 picopter/CMakeFiles/picopter_generate_messages_py.dir/rule
 .PHONY : picopter/CMakeFiles/picopter_generate_messages_py.dir/rule
@@ -826,6 +841,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -867,11 +883,11 @@ help:
 	@echo "... picopter_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... picopter_gennodejs"
+	@echo "... _picopter_generate_messages_check_deps_CamMeasurement"
 	@echo "... picopter_generate_messages_py"
 	@echo "... test"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... rebuild_cache"
-	@echo "... install/local"
 	@echo "... src/nodes/tag_detector_node.o"
 	@echo "... src/nodes/tag_detector_node.i"
 	@echo "... src/nodes/tag_detector_node.s"

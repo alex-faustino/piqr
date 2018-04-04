@@ -56,6 +56,7 @@ include picopter/CMakeFiles/picopter_generate_messages_py.dir/progress.make
 picopter/CMakeFiles/picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_SpinRates.py
 picopter/CMakeFiles/picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_IMUOutput.py
 picopter/CMakeFiles/picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_Interface.py
+picopter/CMakeFiles/picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_CamMeasurement.py
 picopter/CMakeFiles/picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/__init__.py
 
 
@@ -74,17 +75,24 @@ picopter/CMakeFiles/picopter_generate_messages_py: /home/pi/picopter/devel/lib/p
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG picopter/Interface"
 	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pi/picopter/src/picopter/msg/Interface.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg
 
+/home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_CamMeasurement.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_CamMeasurement.py: /home/pi/picopter/src/picopter/msg/CamMeasurement.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG picopter/CamMeasurement"
+	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pi/picopter/src/picopter/msg/CamMeasurement.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg
+
 /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/__init__.py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_SpinRates.py
 /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/__init__.py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_IMUOutput.py
 /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/__init__.py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_Interface.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for picopter"
+/home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/__init__.py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_CamMeasurement.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python msg __init__.py for picopter"
 	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg --initpy
 
 picopter_generate_messages_py: picopter/CMakeFiles/picopter_generate_messages_py
 picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_SpinRates.py
 picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_IMUOutput.py
 picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_Interface.py
+picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/_CamMeasurement.py
 picopter_generate_messages_py: /home/pi/picopter/devel/lib/python2.7/dist-packages/picopter/msg/__init__.py
 picopter_generate_messages_py: picopter/CMakeFiles/picopter_generate_messages_py.dir/build.make
 

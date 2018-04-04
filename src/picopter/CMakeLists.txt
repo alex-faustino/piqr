@@ -21,6 +21,7 @@ add_message_files(
   IMUOutput.msg
   SpinRates.msg
   Interface.msg
+  CamMeasurement.msg
 )
 
 generate_messages(

@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "/home/pi/picopter/devel/include/picopter/SpinRates.h"
   "/home/pi/picopter/devel/include/picopter/IMUOutput.h"
   "/home/pi/picopter/devel/include/picopter/Interface.h"
+  "/home/pi/picopter/devel/include/picopter/CamMeasurement.h"
 )
 
 # Per-language clean rules from dependency scanning.

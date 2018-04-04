@@ -287,6 +287,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "picopter/CMakeFiles/picopter_generate_messages_lisp.dir/DependInfo.cmake"
   "picopter/CMakeFiles/sensor_msgs_generate_messages_eus.dir/DependInfo.cmake"
   "picopter/CMakeFiles/picopter_gennodejs.dir/DependInfo.cmake"
+  "picopter/CMakeFiles/_picopter_generate_messages_check_deps_CamMeasurement.dir/DependInfo.cmake"
   "picopter/CMakeFiles/picopter_generate_messages_py.dir/DependInfo.cmake"
   "picopter/CMakeFiles/sensor_msgs_generate_messages_py.dir/DependInfo.cmake"
   "usb_cam/CMakeFiles/std_srvs_generate_messages_nodejs.dir/DependInfo.cmake"

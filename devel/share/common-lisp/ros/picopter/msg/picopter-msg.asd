@@ -4,6 +4,8 @@
 (defsystem "picopter-msg"
   :depends-on (:roslisp-msg-protocol :roslisp-utils )
   :components ((:file "_package")
+    (:file "CamMeasurement" :depends-on ("_package_CamMeasurement"))
+    (:file "_package_CamMeasurement" :depends-on ("_package"))
     (:file "IMUOutput" :depends-on ("_package_IMUOutput"))
     (:file "_package_IMUOutput" :depends-on ("_package"))
     (:file "Interface" :depends-on ("_package_Interface"))

@@ -12,6 +12,7 @@
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
 #include <geometry_msgs/Pose.h>
+#include <picopter/CamMeasurement.h>
 #include "opencv2/opencv.hpp"
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -29,7 +30,7 @@ class TagDetector
 	image_transport::ImageTransport it_;
 	image_transport::Subscriber image_sub_;
 	//image_transport::Publisher image_pub_;
-	ros::Publisher tag_pose_pub;
+	ros::Publisher pose_pub;
   
 	// AprilTag
 	AprilTags::TagDetector* tagDetector;
@@ -58,7 +59,7 @@ class TagDetector
 		// Subscribe to input video feed and publish output video feed
 		image_sub_ = it_.subscribe("/usb_cam/image_raw", 1, &TagDetector::imageCb, this);
 		//image_pub_ = it_.advertise("/tag_detector/raw_image", 1);
-		tag_pose_pub = nh_.advertise<geometry_msgs::Pose>("tag_detector/tag_pose", 1);
+		pose_pub = nh_.advertise<picopter::CamMeasurement>("tag_detector/tag_pose", 1);
 		
 		// Prepare the window
 		//cv::namedWindow(WINDOWNAME);
