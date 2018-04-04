@@ -8,17 +8,14 @@ class QuadController:
 	# Observe position error and compute desired roll, pitch, yaw, and
 	# thrust
 	def postion_control(self, inputs_nominal, quad_state):
-		roll_desired = np.dot(-self.K_y, np.array([[quad_state.y], 
-												   [quad_state.y_dot]]))
-		pitch_desired = np.dot(self.K_x, np.array([[quad_state.x], 
-												   [quad_state.x_dot]]))
+		roll_desired = np.dot(-self.K_y, np.array([quad_state[1], 
+												   quad_state[7]]))
+		pitch_desired = np.dot(-self.K_x, np.array([quad_state[0], 
+												   quad_state[6]]))
 		yaw_desired = 0.0
-		thrust_delta = np.dot(-self.K_z, np.array([[quad_state.z], 
-												   [quad_state.z_dot]]))
-		inputs_delta = np.array([[roll_desired], 
-								 [pitch_desired], 
-								 [yaw_desired], 
-								 [thrust_delta]])
+		thrust_delta = np.dot(-self.K_z, np.array([quad_state[2], 
+												   quad_state[8]]))
+		inputs_delta = np.vstack((roll_desired, pitch_desired, yaw_desired, thrust_delta))
 								 
 		inputs = inputs_nominal + inputs_delta
 		
@@ -26,16 +23,13 @@ class QuadController:
 	
 	# Regulate attitude
 	def attitude_control(self, position_inputs, quad_state):
-		roll_torque = np.dot(-self.K_roll, np.array([[quad_state.roll - position_inputs[0]], 
-												     [quad_state.roll_dot]]))
-		pitch_torque = np.dot(-self.K_pitch, np.array([[quad_state.pitch + position_inputs[1]], 
-												       [quad_state.pitch_dot]]))
-		yaw_torque = np.dot(-self.K_yaw, np.array([[quad_state.yaw - position_inputs[2]], 
-												   [quad_state.yaw_dot]]))
-		inputs = np.array([[roll_torque], 
-						   [pitch_torque], 
-						   [yaw_torque],
-						   [position_inputs[3]]])
+		roll_torque = np.dot(-self.K_roll, np.array([quad_state[5] - position_inputs[0], 
+												     quad_state[11]]))
+		pitch_torque = np.dot(-self.K_pitch, np.array([quad_state[4] + position_inputs[1], 
+												       quad_state[10]]))
+		yaw_torque = np.dot(-self.K_yaw, np.array([quad_state[3] - position_inputs[2], 
+												   quad_state[9]]))
+		inputs = np.vstack((roll_torque, pitch_torque, yaw_torque, position_inputs[3]))
 		
 		return inputs
 		
@@ -43,9 +37,11 @@ class QuadController:
 	def input_to_spin(self, inputs, quad):
 		k_M = quad.k_M
 		k_F = quad.k_F
+		lx = quad.lx
+		ly = quad.ly
 		
-		W = np.array([[k_F*self.ly,-k_F*self.ly,k_F*self.ly,-k_F*self.ly],
-					  [k_F*self.lx,k_F*self.lx,-k_F*self.lx,-k_F*self.lx],
+		W = np.array([[k_F*ly,-k_F*ly,k_F*ly,-k_F*ly],
+					  [k_F*lx,k_F*lx,-k_F*lx,-k_F*lx],
 					  [k_M, -k_M, -k_M, k_M],
 					  [-k_F, -k_F, -k_F, -k_F]])
 

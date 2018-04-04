@@ -21,11 +21,24 @@ class StateEstimator:
 		S = (1/c2)*S
 		
 		theta_dots = np.dot(S, np.array([[imu_data[9]], 
-										 [imu_data[8]], 
-										 [imu_data[7]]]))
+										 [imu_data[7]], 
+										 [imu_data[8]]]))
 										 
 		return theta_dots
 		
+	def velocity_est(self):
+		if self.first_predict:
+			self.last_x = self.cam_data[0, 0]
+			self.last_y = self.cam_data[1, 0]
+			self.last_z = self.cam_data[2, 0]
+			self.first_predict = False
+			return 0., 0., 0.
+		else:
+			vel_x = (self.cam_data[0, 0] - self.last_x)*self.dt
+			vel_y = (self.cam_data[1, 0] - self.last_y)*self.dt
+			vel_z = (self.cam_data[2, 0] - self.last_z)*self.dt
+			return vel_x, vel_y, vel_z
+	
 	def cam_cb(self, tag_pose):
 		# Put ROS messages in to numpy arrays
 		# z 6x1
@@ -40,6 +53,27 @@ class StateEstimator:
 		
 		self.new_cam_data = True
 		
+	def get_state(self):
+		imu_data = self.bno.get_imu_data()
+		# Convert body rates to euler rates
+		theta_dots = self.body_to_euler(imu_data)
+		vel_x, vel_y, vel_z = self.velocity_est()
+		
+		state = np.array([[self.cam_data[0, 0]],
+						  [self.cam_data[1, 0]],
+						  [self.cam_data[2, 0]],
+						  [self.cam_data[3, 0]],
+						  [imu_data[5]],
+						  [imu_data[6]],
+						  [vel_x],
+						  [vel_y],
+						  [vel_z],
+						  [imu_data[9]],
+						  [imu_data[7]],
+						  [imu_data[8]]])
+						  
+		return state
+	
 	def predict(self, quad_state, imu_data):
 		# Convert body rates to euler rates
 		theta_dots = self.body_to_euler(imu_data)
@@ -49,16 +83,16 @@ class StateEstimator:
 		# Use trapezoidal integration on imu measurements to predict 
 		# next state
 		if self.first_predict:
-			d_vel_x = np.trapz([0, imu_data[0]], dx=0.01)
-			d_vel_y = np.trapz([0, imu_data[1]], dx=0.01)
-			d_vel_z = np.trapz([0, imu_data[2]], dx=0.01)
+			d_vel_x = np.trapz([0, imu_data[1]], dx=0.01)
+			d_vel_y = np.trapz([0, imu_data[2]], dx=0.01)
+			d_vel_z = np.trapz([0, imu_data[3]], dx=0.01)
 			d_x = np.trapz([0, d_vel_x], dx=0.01)
 			d_y = np.trapz([0, d_vel_y], dx=0.01)
 			d_z = np.trapz([0, d_vel_z], dx=0.01)
 		else:
-			d_vel_x = np.trapz([self.acc_x_km1, imu_data[0]], dx=0.01)
-			d_vel_y = np.trapz([self.acc_y_km1, imu_data[1]], dx=0.01)
-			d_vel_z = np.trapz([self.acc_z_km1, imu_data[2]], dx=0.01)
+			d_vel_x = np.trapz([self.acc_x_km1, imu_data[1]], dx=0.01)
+			d_vel_y = np.trapz([self.acc_y_km1, imu_data[2]], dx=0.01)
+			d_vel_z = np.trapz([self.acc_z_km1, imu_data[3]], dx=0.01)
 			d_x = np.trapz([self.vel_x_km1, d_vel_x], dx=0.01)
 			d_y = np.trapz([self.vel_y_km1, d_vel_y], dx=0.01)
 			d_z = np.trapz([self.vel_z_km1, d_vel_z], dx=0.01)
@@ -75,9 +109,9 @@ class StateEstimator:
 		state_pred = quad_state + d_quad_state
 		
 		# Cycle imu values
-		self.acc_x_km1 = imu_data[0]
-		self.acc_y_km1 = imu_data[1]
-		self.acc_z_km1 = imu_data[2]
+		self.acc_x_km1 = imu_data[1]
+		self.acc_y_km1 = imu_data[2]
+		self.acc_z_km1 = imu_data[3]
 		self.vel_x_km1 = d_vel_x
 		self.vel_y_km1 = d_vel_y
 		self.vel_z_km1 = d_vel_z
@@ -118,7 +152,8 @@ class StateEstimator:
 		
 		return state_pred
 		
-	def __init__(self, quad):
+	def __init__(self, quad, bno):
+		self.bno = bno
 		# Acceleration due to gravity in m/s^2
 		self.g = 9.80665
 		# Guess at tag_detector average report rate
@@ -161,7 +196,7 @@ class StateEstimator:
 						   [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
 						   [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]])
 		# Measurement noise covariance 6x6
-		self.R = np.diag([0.01, 0.01, 0.01, 0.1, 0.1, 0.1])
+		self.R = np.diag([0.1, 0.1, 0.1, 0.01, 0.01, 0.01])
 		# Kalman gain 12x6
 		self.K = np.zeros((12, 6))
 		# Residual 6x1

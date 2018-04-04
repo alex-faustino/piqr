@@ -33,16 +33,23 @@ class MotorController:
 		print('Motors Armed')
 	
 	# Update the PWM of a motor
-	def set_pwm(self, esc, pwm): 
+	def set_pwm(self, esc, spin): 
 		max_cur = 1500
 		min_cur = 1100
 		
 		# TODO: add call to spin_to_pwm
+		if spin < 0:
+			spin = -spin
+			
+		pwm = 2.9768e-4*spin
+		print pwm
+		
 		if pwm > max_cur:
 			pwm = max_cur
 		if pwm < min_cur:
 			pwm = min_cur
-			  
+		
+		print pwm
 		self.pi.set_servo_pulsewidth(esc.location, pwm)
     
     # Stop all motors
