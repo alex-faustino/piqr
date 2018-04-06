@@ -9,6 +9,11 @@ class Imu:
 		t = time.time()
 		accel_x, accel_y, accel_z = self.bno.read_linear_acceleration()
 		yaw, roll, pitch = self.bno.read_euler()
+		# fix pitch mod
+		if pitch < 0:
+			pitch += 180
+		else:
+			pitch -= 180
 		yaw = math.radians(yaw)
 		pitch = math.radians(pitch)
 		roll = math.radians(roll)

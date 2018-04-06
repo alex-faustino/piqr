@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-
-import rospy
 import os
 import pigpio
 import time
+
+from esc import Esc
 
 # launch GPIO
 os.system ("sudo pigpiod")
@@ -12,31 +11,23 @@ time.sleep(1.5)
 class ESCCalibrate:
 	# Initialize motors
 	def motors_start(self):
-		self.pi.set_servo_pulsewidth(self.motor_one, 0)
-		self.pi.set_servo_pulsewidth(self.motor_two, 0)
-		self.pi.set_servo_pulsewidth(self.motor_three, 0)
-		self.pi.set_servo_pulsewidth(self.motor_four, 0)
+		for esc in self.esc_list:
+			self.pi.set_servo_pulsewidth(esc.location, 0)
 		
 	# Set all motors to min_val
 	def motors_min(self):
-		self.pi.set_servo_pulsewidth(self.motor_one, self.min_val)
-		self.pi.set_servo_pulsewidth(self.motor_two, self.min_val)
-		self.pi.set_servo_pulsewidth(self.motor_three, self.min_val)
-		self.pi.set_servo_pulsewidth(self.motor_four, self.min_val)
+		for esc in self.esc_list:
+			self.pi.set_servo_pulsewidth(esc.location, self.min_val)
 		
 	# Set all motors to max_val
 	def motors_max(self):
-		self.pi.set_servo_pulsewidth(self.motor_one, self.max_val)
-		self.pi.set_servo_pulsewidth(self.motor_two, self.max_val)
-		self.pi.set_servo_pulsewidth(self.motor_three, self.max_val)
-		self.pi.set_servo_pulsewidth(self.motor_four, self.max_val)
+		for esc in self.esc_list:
+			self.pi.set_servo_pulsewidth(esc.location, self.max_val)
 	
 	# Stop all motors
 	def motors_stop(self): 
-		self.pi.set_servo_pulsewidth(self.motor_one, 0)
-		self.pi.set_servo_pulsewidth(self.motor_two, 0)
-		self.pi.set_servo_pulsewidth(self.motor_three, 0)
-		self.pi.set_servo_pulsewidth(self.motor_four, 0)
+		for esc in self.esc_list:
+			self.pi.set_servo_pulsewidth(esc.location, 0)
 		self.pi.stop()
 		os.system ("sudo killall pigpiod")
 		
@@ -69,10 +60,11 @@ class ESCCalibrate:
 	
 	def __init__(self):
 		# GPIO pin number and wire color
-		self.motor_one = 6 # yellow wire
-		self.motor_two = 13 # orange
-		self.motor_three = 19 # white
-		self.motor_four = 26 # blue
+		self.esc_one = Esc('front right', 6, 'yellow wire')
+		self.esc_two = Esc('back right', 13, 'orange wire')
+		self.esc_three = Esc('front left', 19, 'white wire')
+		self.esc_four = Esc('back left', 26, 'blue wire')
+		self.esc_list = [self.esc_three, self.esc_four]
 		self.max_val = 2000 #max PWM
 		self.min_val = 700  #min PWM
 		self.pi = pigpio.pi()
@@ -80,10 +72,4 @@ class ESCCalibrate:
 		self.motors_calibrate()
 
 if __name__ == '__main__':
-	# Initialize node
-	rospy.init_node('esc_calibrate')
-
-	try:
-		esc_calibrate = ESCCalibrate()
-	except rospy.ROSInterruptException:
-		pass
+	esc_calibrate = ESCCalibrate()

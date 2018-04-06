@@ -10,12 +10,15 @@ class QuadController:
 	def postion_control(self, inputs_nominal, quad_state):
 		roll_desired = np.dot(-self.K_y, np.array([quad_state[1], 
 												   quad_state[7]]))
-		pitch_desired = np.dot(-self.K_x, np.array([quad_state[0], 
+		pitch_desired = np.dot(self.K_x, np.array([quad_state[0], 
 												   quad_state[6]]))
-		yaw_desired = 0.0
-		thrust_delta = np.dot(-self.K_z, np.array([quad_state[2], 
+		yaw_desired = 0.
+		thrust_delta = -self.K_z.dot(np.array([1. - quad_state[2], 
 												   quad_state[8]]))
-		inputs_delta = np.vstack((roll_desired, pitch_desired, yaw_desired, thrust_delta))
+		inputs_delta = np.array([roll_desired[0, 0],
+								 pitch_desired[0, 0],
+								 yaw_desired,
+								 thrust_delta[0, 0]])
 								 
 		inputs = inputs_nominal + inputs_delta
 		
@@ -25,11 +28,14 @@ class QuadController:
 	def attitude_control(self, position_inputs, quad_state):
 		roll_torque = np.dot(-self.K_roll, np.array([quad_state[5] - position_inputs[0], 
 												     quad_state[11]]))
-		pitch_torque = np.dot(-self.K_pitch, np.array([quad_state[4] + position_inputs[1], 
+		pitch_torque = np.dot(-self.K_pitch, np.array([quad_state[4] - position_inputs[1], 
 												       quad_state[10]]))
 		yaw_torque = np.dot(-self.K_yaw, np.array([quad_state[3] - position_inputs[2], 
 												   quad_state[9]]))
-		inputs = np.vstack((roll_torque, pitch_torque, yaw_torque, position_inputs[3]))
+		inputs = np.array([roll_torque[0, 0],
+						   pitch_torque[0, 0],
+						   yaw_torque[0, 0],
+						   position_inputs[3]])
 		
 		return inputs
 		
@@ -40,12 +46,17 @@ class QuadController:
 		lx = quad.lx
 		ly = quad.ly
 		
-		W = np.array([[k_F*ly,-k_F*ly,k_F*ly,-k_F*ly],
-					  [k_F*lx,k_F*lx,-k_F*lx,-k_F*lx],
-					  [k_M, -k_M, -k_M, k_M],
+		W = np.array([[-k_F*ly, -k_F*ly, k_F*ly, k_F*ly],
+					  [k_F*lx, -k_F*lx, k_F*lx, -k_F*lx],
+					  [-k_M, k_M, k_M, -k_M],
 					  [-k_F, -k_F, -k_F, -k_F]])
-
-		spin_rates = scipy.linalg.solve(W, inputs)
+		
+		#print inputs
+		spin_rates_sqrd = scipy.linalg.solve(W, inputs)
+		for rate in np.nditer(spin_rates_sqrd, op_flags=['readwrite']):
+			if rate < 0:
+				rate[...] = 1.
+		spin_rates = np.sqrt(spin_rates_sqrd)
 		
 		return spin_rates
 		 
@@ -58,7 +69,7 @@ class QuadController:
 		X = np.matrix(scipy.linalg.solve_discrete_are(A, B, Q, R))
 		
 		# Compute the LQR gain
-		K = np.array(scipy.linalg.inv(B.T*X*B + R)*(B.T*X*A))
+		K = scipy.linalg.inv(B.T*X*B + R)*(B.T*X*A)
 		
 		return K
 		
@@ -112,7 +123,7 @@ class QuadController:
 		# Acceleration due to gravity in m/s^2
 		self.g = 9.8066
 		# Average dt estimate
-		self.dt = 0.005
+		self.dt = 0.01
 		
 		self.compute_gains(quad)
 		

@@ -39,7 +39,7 @@ class PicopterFly:
 		rospy.Subscriber("tag_detector/tag_pose", CamMeasurement, se.cam_cb)
 		
 		# Hover test nominal input
-		inputs_nominal = np.array([[0], [0], [0], [-self.quad.m*self.g]])
+		inputs_nominal = np.array([0., 0, 0, self.quad.m*self.g])
 		
 		while not self.se.new_cam_data:
 			print "Waiting for first tag detection..."
@@ -47,19 +47,20 @@ class PicopterFly:
 		while not rospy.is_shutdown():
 			if self.se.new_cam_data:
 				self.quad_state = self.se.get_state()
+				# print self.quad_state
 				position_control_inputs = self.qc.postion_control(inputs_nominal, self.quad_state)
 				self.se.new_cam_data = False
 			else:
 				self.quad_state = self.se.get_state()
 				attitude_control_inputs = self.qc.attitude_control(position_control_inputs, self.quad_state)
-				# print attitude_control_inputs
+				print attitude_control_inputs
 				spin_rates = self.qc.input_to_spin(attitude_control_inputs, self.quad)
-				# print spin_rates
-				mc.set_pwm(mc.esc_one, spin_rates[0])
-				mc.set_pwm(mc.esc_two, spin_rates[1])
-				mc.set_pwm(mc.esc_three, spin_rates[2])
-				mc.set_pwm(mc.esc_four, spin_rates[3])
-				
+				#print spin_rates
+				#mc.set_pwm(mc.esc_one, spin_rates[0])
+				#mc.set_pwm(mc.esc_two, spin_rates[1])
+				#mc.set_pwm(mc.esc_three, spin_rates[2])
+				#mc.set_pwm(mc.esc_four, spin_rates[3])
+			
 		self.mc.motors_stop()
 		
 
@@ -68,7 +69,7 @@ if __name__ == '__main__':
 	rospy.init_node('picopter')
 	
 	try:
-		picopter = Quadcopter(1, 0.28575/2, 0.3556/2, 0.004093, 0.003944, 0.007593, 1.13e-7, 5.46e-5)
+		picopter = Quadcopter(1.1, 0.3556/2, 0.28575/2, 0.008465, 0.0154223, 0.023367, 1.13e-8, 5.46e-5)
 		bno = Imu()
 		mc = MotorController()
 		qc = QuadController(picopter)

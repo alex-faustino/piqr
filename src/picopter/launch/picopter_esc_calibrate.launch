@@ -1,4 +1,0 @@
-<launch>  
-  <!-- Python ESC calibrator -->
-  <node name="esc_calibrate" pkg="picopter" type="esc_calibrate.py" output="screen"/>
-</launch>

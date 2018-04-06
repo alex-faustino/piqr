@@ -1,6 +1,7 @@
 import os
 import pigpio
 import time
+import math
 
 from esc import Esc
 
@@ -32,24 +33,25 @@ class MotorController:
 		time.sleep(1)
 		print('Motors Armed')
 	
+	# Sigmoid function for scaling spin to pwm
+	def sigmoid(x):
+		return 1/(1 + math.exp(-x))
+		
 	# Update the PWM of a motor
 	def set_pwm(self, esc, spin): 
-		max_cur = 1500
-		min_cur = 1100
-		
-		# TODO: add call to spin_to_pwm
-		if spin < 0:
-			spin = -spin
+		max_pwm = 1600
+		min_pwm = 1100
 			
-		pwm = 2.9768e-4*spin
-		print pwm
-		
-		if pwm > max_cur:
-			pwm = max_cur
-		if pwm < min_cur:
-			pwm = min_cur
+		pwm = 0.11538*spin + 1100
 		
 		print pwm
+		
+		if pwm > max_pwm:
+			pwm = max_pwm
+		if pwm < min_pwm:
+			pwm = min_pwm
+		
+		#print pwm
 		self.pi.set_servo_pulsewidth(esc.location, pwm)
     
     # Stop all motors
@@ -62,10 +64,10 @@ class MotorController:
 		print "Motors stopped"
 		
 	def __init__(self):
-		self.esc_one = Esc('front left', 6, 'yellow wire')
-		self.esc_two = Esc('front right', 13, 'orange wire')
-		self.esc_three = Esc('back left', 19, 'white wire')
-		self.esc_four = Esc('back right', 26, 'blue wire')
+		self.esc_one = Esc('front right', 6, 'yellow wire')
+		self.esc_two = Esc('back right', 13, 'orange wire')
+		self.esc_three = Esc('front left', 19, 'white wire')
+		self.esc_four = Esc('back left', 26, 'blue wire')
 		self.esc_list = [self.esc_one, self.esc_two, self.esc_three, self.esc_four]
 		self.pi = pigpio.pi()
 		
