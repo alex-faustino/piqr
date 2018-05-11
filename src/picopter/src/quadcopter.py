@@ -1,3 +1,5 @@
+import numpy as np
+
 class Quadcopter:
 	
 	def __init__(self, m, lx, ly, j_roll, j_pitch, j_yaw, k_M, k_F):
@@ -20,3 +22,10 @@ class Quadcopter:
 		self.k_M = k_M 
 		self.k_F = k_F
 		
+		# Relative translations between reference frames in meters
+		# 0:= Tag
+		# 1:= Quad CoM
+		# 2:= PiCamera
+		# 3:= IMU
+		self.o_2in1 = np.array([0.013, 0.14, -0.01])
+		self.o_3in1 = np.array([-0.01, -0.063, -0.035])

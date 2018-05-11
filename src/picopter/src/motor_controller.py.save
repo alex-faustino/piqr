@@ -32,23 +32,27 @@ class MotorController:
 		self.motors_min()
 		time.sleep(1)
 		print('Motors Armed')
+	
+	# Sigmoid function for scaling spin to pwm
+	def sigmoid(x):
+		return 1/(1 + math.exp(-x))
 		
 	# Update the PWM of a motor
 	def set_pwm(self, esc, spin): 
 		max_pwm = 1600
 		min_pwm = 1100
-		# pwm = spin	
-		pwm = 0.1167*spin + 896.61
+	#pwm = spin	
+		pwm = 0.11538*spin + 1100
 		
-		print pwm
+		#print pwm
 		
 		if pwm > max_pwm:
 			pwm = max_pwm
 		if pwm < min_pwm:
 			pwm = min_pwm
 		
-		# print pwm
-		# self.pi.set_servo_pulsewidth(esc.location, pwm)
+		#print pwm
+		self.pi.set_servo_pulsewidth(esc.location, pwm)
     
     # Stop all motors
 	def motors_stop(self): 

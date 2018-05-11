@@ -8,21 +8,21 @@ import numpy as np
 from picopter.msg import CamMeasurement
 
 class StateEstimator:
-	# Convert vectors from lab frame to body frame
-	def lab_to_body(self, vec_lab, yaw_lab, pitch_lab, roll_lab):
-		c1 = math.cos(yaw_lab)
-		s1 = math.sin(yaw_lab)
-		c2 = math.cos(pitch_lab)
-		s2 = math.sin(pitch_lab)
-		c3 = math.cos(roll_lab)
-		s3 = math.sin(roll_lab)
+	# Convert vectors between reference frames
+	def cam_to_body(self, cam_data):
+		c1 = math.cos(cam_data[3])
+		s1 = math.sin(cam_data[3])
+		c2 = math.cos(cam_data[4])
+		s2 = math.sin(cam_data[4])
+		c3 = math.cos(cam_data[5])
+		s3 = math.sin(cam_data[5])
 		
-		R_b_in_l =  np.array([[c1*c2, c1*s2*s3 - c3*s1, s1*s3 + c1*c3*s2],
-							  [c2*s1, c1*c3 + s1*s2*s3, c3*s1*s2 - c1*s3],
-							  [-s2, c2*s3, c2*c3]])
-		vec_body = np.dot(R_b_in_l, vec_lab)
+		R_2in0 =  np.array([[c1*c2, c1*s2*s3 - c3*s1, s1*s3 + c1*c3*s2],
+							[c2*s1, c1*c3 + s1*s2*s3, c3*s1*s2 - c1*s3],
+							[-s2, c2*s3, c2*c3]])
+		o_1in0 = cam_data[0:3] - np.dot(R_2in0, self.quad.o_2in1)
 		
-		return vec_body
+		return o_1in0
 		
 	# Convert body rates to Euler rates
 	def body_to_euler(self, imu_data):
@@ -63,13 +63,16 @@ class StateEstimator:
 	def cam_cb(self, tag_pose):
 		# Put ROS messages in to numpy arrays
 		# z 6x1
-		self.cam_data = np.array([tag_pose.x,
-								  tag_pose.y,
-								  tag_pose.z,
-								  tag_pose.yaw,
-								  tag_pose.pitch,
-								  tag_pose.roll])
-								  					  
+		cam_data = np.array([tag_pose.x,
+							 tag_pose.y,
+							 tag_pose.z,
+							 tag_pose.yaw,
+							 tag_pose.pitch,
+							 tag_pose.roll])
+		
+		cam_data[0:3] = self.cam_to_body(cam_data)						  				
+		self.cam_data = cam_data
+			  
 		# print self.cam_data
 		
 		self.new_cam_data = True
@@ -105,6 +108,8 @@ class StateEstimator:
 		self.g = 9.80665
 		# Guess at tag_detector average report rate
 		self.dt = 0.5
+		
+		self.quad = quad
 		
 		self.first_predict = True
 		self.new_cam_data = False

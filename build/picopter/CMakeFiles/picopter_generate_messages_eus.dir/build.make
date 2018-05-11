@@ -53,41 +53,20 @@ CMAKE_BINARY_DIR = /home/pi/picopter/build
 # Include the progress variables for this target.
 include picopter/CMakeFiles/picopter_generate_messages_eus.dir/progress.make
 
-picopter/CMakeFiles/picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/msg/SpinRates.l
-picopter/CMakeFiles/picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/msg/IMUOutput.l
-picopter/CMakeFiles/picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/msg/Interface.l
 picopter/CMakeFiles/picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/msg/CamMeasurement.l
 picopter/CMakeFiles/picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/manifest.l
 
 
-/home/pi/picopter/devel/share/roseus/ros/picopter/msg/SpinRates.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/pi/picopter/devel/share/roseus/ros/picopter/msg/SpinRates.l: /home/pi/picopter/src/picopter/msg/SpinRates.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from picopter/SpinRates.msg"
-	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/pi/picopter/src/picopter/msg/SpinRates.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/share/roseus/ros/picopter/msg
-
-/home/pi/picopter/devel/share/roseus/ros/picopter/msg/IMUOutput.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/pi/picopter/devel/share/roseus/ros/picopter/msg/IMUOutput.l: /home/pi/picopter/src/picopter/msg/IMUOutput.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from picopter/IMUOutput.msg"
-	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/pi/picopter/src/picopter/msg/IMUOutput.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/share/roseus/ros/picopter/msg
-
-/home/pi/picopter/devel/share/roseus/ros/picopter/msg/Interface.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/pi/picopter/devel/share/roseus/ros/picopter/msg/Interface.l: /home/pi/picopter/src/picopter/msg/Interface.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from picopter/Interface.msg"
-	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/pi/picopter/src/picopter/msg/Interface.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/share/roseus/ros/picopter/msg
-
 /home/pi/picopter/devel/share/roseus/ros/picopter/msg/CamMeasurement.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/pi/picopter/devel/share/roseus/ros/picopter/msg/CamMeasurement.l: /home/pi/picopter/src/picopter/msg/CamMeasurement.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from picopter/CamMeasurement.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from picopter/CamMeasurement.msg"
 	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/pi/picopter/src/picopter/msg/CamMeasurement.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/share/roseus/ros/picopter/msg
 
 /home/pi/picopter/devel/share/roseus/ros/picopter/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for picopter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for picopter"
 	cd /home/pi/picopter/build/picopter && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/pi/picopter/devel/share/roseus/ros/picopter picopter std_msgs
 
 picopter_generate_messages_eus: picopter/CMakeFiles/picopter_generate_messages_eus
-picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/msg/SpinRates.l
-picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/msg/IMUOutput.l
-picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/msg/Interface.l
 picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/msg/CamMeasurement.l
 picopter_generate_messages_eus: /home/pi/picopter/devel/share/roseus/ros/picopter/manifest.l
 picopter_generate_messages_eus: picopter/CMakeFiles/picopter_generate_messages_eus.dir/build.make

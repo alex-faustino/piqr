@@ -53,40 +53,16 @@ CMAKE_BINARY_DIR = /home/pi/picopter/build
 # Include the progress variables for this target.
 include picopter/CMakeFiles/picopter_generate_messages_cpp.dir/progress.make
 
-picopter/CMakeFiles/picopter_generate_messages_cpp: /home/pi/picopter/devel/include/picopter/SpinRates.h
-picopter/CMakeFiles/picopter_generate_messages_cpp: /home/pi/picopter/devel/include/picopter/IMUOutput.h
-picopter/CMakeFiles/picopter_generate_messages_cpp: /home/pi/picopter/devel/include/picopter/Interface.h
 picopter/CMakeFiles/picopter_generate_messages_cpp: /home/pi/picopter/devel/include/picopter/CamMeasurement.h
 
-
-/home/pi/picopter/devel/include/picopter/SpinRates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/pi/picopter/devel/include/picopter/SpinRates.h: /home/pi/picopter/src/picopter/msg/SpinRates.msg
-/home/pi/picopter/devel/include/picopter/SpinRates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from picopter/SpinRates.msg"
-	cd /home/pi/picopter/src/picopter && /home/pi/picopter/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/pi/picopter/src/picopter/msg/SpinRates.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/include/picopter -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/pi/picopter/devel/include/picopter/IMUOutput.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/pi/picopter/devel/include/picopter/IMUOutput.h: /home/pi/picopter/src/picopter/msg/IMUOutput.msg
-/home/pi/picopter/devel/include/picopter/IMUOutput.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from picopter/IMUOutput.msg"
-	cd /home/pi/picopter/src/picopter && /home/pi/picopter/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/pi/picopter/src/picopter/msg/IMUOutput.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/include/picopter -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/pi/picopter/devel/include/picopter/Interface.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/pi/picopter/devel/include/picopter/Interface.h: /home/pi/picopter/src/picopter/msg/Interface.msg
-/home/pi/picopter/devel/include/picopter/Interface.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from picopter/Interface.msg"
-	cd /home/pi/picopter/src/picopter && /home/pi/picopter/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/pi/picopter/src/picopter/msg/Interface.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/include/picopter -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/pi/picopter/devel/include/picopter/CamMeasurement.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/pi/picopter/devel/include/picopter/CamMeasurement.h: /home/pi/picopter/src/picopter/msg/CamMeasurement.msg
 /home/pi/picopter/devel/include/picopter/CamMeasurement.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from picopter/CamMeasurement.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/picopter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from picopter/CamMeasurement.msg"
 	cd /home/pi/picopter/src/picopter && /home/pi/picopter/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/pi/picopter/src/picopter/msg/CamMeasurement.msg -Ipicopter:/home/pi/picopter/src/picopter/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p picopter -o /home/pi/picopter/devel/include/picopter -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 picopter_generate_messages_cpp: picopter/CMakeFiles/picopter_generate_messages_cpp
-picopter_generate_messages_cpp: /home/pi/picopter/devel/include/picopter/SpinRates.h
-picopter_generate_messages_cpp: /home/pi/picopter/devel/include/picopter/IMUOutput.h
-picopter_generate_messages_cpp: /home/pi/picopter/devel/include/picopter/Interface.h
 picopter_generate_messages_cpp: /home/pi/picopter/devel/include/picopter/CamMeasurement.h
 picopter_generate_messages_cpp: picopter/CMakeFiles/picopter_generate_messages_cpp.dir/build.make
 

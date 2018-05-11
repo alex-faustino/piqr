@@ -64,7 +64,7 @@ class ESCCalibrate:
 		self.esc_two = Esc('back right', 13, 'orange wire')
 		self.esc_three = Esc('front left', 19, 'white wire')
 		self.esc_four = Esc('back left', 26, 'blue wire')
-		self.esc_list = [self.esc_three, self.esc_four]
+		self.esc_list = [self.esc_one, self.esc_two, self.esc_three, self.esc_four]
 		self.max_val = 2000 #max PWM
 		self.min_val = 700  #min PWM
 		self.pi = pigpio.pi()
