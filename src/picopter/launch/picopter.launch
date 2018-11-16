@@ -1,7 +1,4 @@
-<launch>
-  <!-- Python user interface -->
-  <node name="interface" pkg="picopter" type="interface.py" output="screen" launch-prefix="xterm -e"/>
-  
+<launch>  
   <!-- Camera driver -->
   <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" >
     <param name="video_device" value="/dev/video0" />
@@ -15,18 +12,6 @@
   <!-- C++ AprilTag detector and pose publisher -->
   <node name="tag_detector" pkg="picopter" type="tag_detector"/>
   
-  <!-- Python IMU data publisher -->
-  <node name="imu_data" pkg="picopter" type="imu_data.py"/>
-  
-  <!-- Python state estimator -->
-  <node name="quad_state" pkg="picopter" type="quad_state.py"/>
-  
-  <!-- Python trajectory and flight planner -->
-  <node name="flight_planner" pkg="picopter" type="flight_planner.py"/>
-  
-  <!-- Python flight controller -->
-  <node name="quad_controller" pkg="picopter" type="quad_controller.py"/>
-  
-  <!-- Python ESC controller -->
-  <node name="motor_control" pkg="picopter" type="motor_control.py" output="screen" launch-prefix="xterm -e"/>
+  <!-- Picopter flight node -->
+  <node name="picopter_fly" pkg="picopter" type="picopter_fly.py" output="screen"/>
 </launch>

@@ -33,11 +33,7 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/picopter/msg" TYPE FILE FILES
-    "/home/pi/picopter/src/picopter/msg/IMUOutput.msg"
-    "/home/pi/picopter/src/picopter/msg/SpinRates.msg"
-    "/home/pi/picopter/src/picopter/msg/Interface.msg"
-    )
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/picopter/msg" TYPE FILE FILES "/home/pi/picopter/src/picopter/msg/CamMeasurement.msg")
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
